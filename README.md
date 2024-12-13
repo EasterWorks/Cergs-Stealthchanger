@@ -19,7 +19,28 @@ This repo is under construction. I will update this document when it is in its "
 
 If you have any questions about necessary plugins or part designs, please reach out to the original creators (whom will be listed and credited when their content is used).  
 
-### Updates:
+
+
+## Credits:  
+Viesturz, "tapchanger"  
+https://github.com/viesturz/tapchanger  
+
+DraftShift Design, "StealthChanger"  
+https://github.com/DraftShift/StealthChanger  
+
+DraftShift Design "klipper-toolchanger"  
+https://github.com/DraftShift/klipper-toolchanger  
+
+
+
+
+## Updates:
 
 12/13/2024:  
 -Added my initial configs assortment. Some are incomplete.  
+
+
+
+
+
+
