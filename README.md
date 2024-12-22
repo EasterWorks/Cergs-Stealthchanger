@@ -7,7 +7,7 @@ This repo contains my configurations and settings for my Stealthchanger build.
 This repo may be useful for you if you are doing a Stealthchanger build on a Voron 2.4 or Trident and have the following considerations in mind:  
 
 - You are using the LDO Nitehawk-SB, Nitehawk-36, or other USB toolhead instead of CANBUS.
-- You are using the standard X/Y endstops that are located on the intersection of the X and Y axiis rather than the toolhead-mounted endstops.
+- You are using the standard X/Y endstops that are located on the intersection of the X and Y axiis rather than the toolhead-mounted endstops or sensorless homing.
 - You are using OptoTAP v2.4.1 for your Z axis probe and endstop trigger.
 - You are currently digging through 5 different repos to find the right information and still can't get your setup to work.
 
