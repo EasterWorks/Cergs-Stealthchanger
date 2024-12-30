@@ -17,7 +17,7 @@ As this repo is targeted toward people wanting to use the Stealthburner toolhead
 
 _ECAS fitting for Clockwork 2_
 First up: I HIGHLY advise printing a CW2 housing with allowance for an ECAS fitting. I used this one by AlexanderT_Moss on Printables:
-https://www.printables.com/model/433797-clockwork-2-ecas-fitting-for-ercf
+- https://www.printables.com/model/433797-clockwork-2-ecas-fitting-for-ercf
 
 The reason for using an ECAS fitting is because the reverse bowden tubes will be flexing around a bit more than usual when constrained to the umbilical. Make sure to print the modified latch as well since it needs to be able to clear the ECAS fitting.
 
