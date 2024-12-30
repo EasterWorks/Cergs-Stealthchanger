@@ -15,3 +15,12 @@ a positive gcode offset will move the tool "further" on its given axis (toward i
 
 In your toolhead config, set the real nozzle offset (the result you get when running PROBE_CALIBRATE) as the z_offset value under [tool_probe tool#]. When you have determined
 the needed gcode offset per the above information, set that as the gcode_z_offset value under [tool tool#].
+
+# Nozzle Offsets - X/Y Offset
+
+These offsets will entirely be done as gcode offset, particularly gcode_x_offset and gcode_y_offset values under [tool tool#]. My typical approach is to slice a 20mmx4mm cube,
+starting with T0, and then insert a filament change to T1 once it reaches 2mm tall. When finished, you should mark which side of the cube was facing you when you pulled it off
+of the bed to maintain the orientation.
+
+When finished, the two sections will most likely be offset by a small amount. I use a digital depth gauge to determine just how offset these are and note that for both axiis.
+Once noted, enter the information for your gcode_x_offset and gcode_y_offset values as mentioned above. Remember; positive values move TOWARD the axis' travel limit.
