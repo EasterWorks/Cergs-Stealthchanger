@@ -23,9 +23,9 @@ First up: I HIGHLY advise printing a CW2 housing with allowance for an ECAS fitt
 The reason for using an ECAS fitting is because the reverse bowden tubes will be flexing around a bit more than usual when constrained to the umbilical. Make sure to print the modified latch as well since it needs to be able to clear the ECAS fitting.
 
 
-_Backplates and Shuttles_
+### Backplates and Shuttles
 Next you'll need both the Stealthburner backplates and a shuttle. Here are the backplates from the DraftShift Design repo:
-https://github.com/DraftShift/StealthChanger/blob/main/STLs/Backplates/StealthBurner.stl
+- https://github.com/DraftShift/StealthChanger/blob/main/STLs/Backplates/StealthBurner.stl
 
 As for the shuttle, I have modified DSD's design to allow you to loop the belts back into and out of the housing to prevent cutting the belts too short. It can be found in this repo:
 https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/STLs/MGN12%20Shuttle.stl
@@ -37,38 +37,37 @@ It is also worth noting that this will move your Y axis about 5mm toward the "fr
 You need one backplate per toolhead and only one shuttle.
 
 
-_PG7 gland mount for Stealthburner_
+### PG7 gland mount for Stealthburner
 Last part for the toolhead itself - you'll want a PG7 gland mount on the Stealthburners to replace the original X axis dragchain mount. I use this one by CstmCreations_174350 on Printables:
-https://www.printables.com/model/463220-voron-cw2-stealthburner-ebb-sb2240-pg7-umbilical-m
+- https://www.printables.com/model/463220-voron-cw2-stealthburner-ebb-sb2240-pg7-umbilical-m
 
 
-_Umbilical clips_
+### Umbilical clips
 Next up, your umbilical clips. These are largely up to you - I designed ones that would slip over the Nitehawk USB cable, allow a channel for the reverse bowden tube, and use two small zipties to create just enough tension to grip on to the cable and bowden without crushing them. It also has holes to allow for 1mm piano wire as the stiffening component of the umbilical. You can find them here:
-https://www.printables.com/model/1127631-ldo-nitehawk-umbilical-clips-for-stealthchanger-ta
+- https://www.printables.com/model/1127631-ldo-nitehawk-umbilical-clips-for-stealthchanger-ta
 
 I use four per umbilical.
 
 
-_Bird's Nest fannypack and Exhaust Plate_
+### Bird's Nest fannypack and Exhaust Plate
 Now let's look at making a home for the Bird's Nest and a new exhaust plate to allow the umbilicals into the print chamber. For housing the Bird's Nest, print the fanny pack by Isiks Tech:
-https://github.com/xbst/Birds-Nest/tree/master/Mounts/V2
+- https://github.com/xbst/Birds-Nest/tree/master/Mounts/V2
 
 I used 3M double-sided tape to stick it to the back panel a few inches under the exhaust plate.
 
 Now for the exhaust plate itself - I designed one that would allow you to non-destrucitvely insert and retain the umbilicals. You can find it here on Printables:
-https://www.printables.com/model/1127639-ldo-nitehawk-umbilical-exhaust-plate-for-voron-24
+- https://www.printables.com/model/1127639-ldo-nitehawk-umbilical-exhaust-plate-for-voron-24
 
 
-_Docks_
-Finally, we need to print our docks. I used low-profile docks that secure to a crossbeam rather than to the top of the printer's frame using parts from three sourcess. The first source, cjackson234 on Printables, provides the following base file we'll need:
-- base minimal.stl
-https://www.printables.com/model/994635-stealthchanger-stealthburner-minimal-docks-aka-hap
+### Docks
+Finally, we need to print our docks. I used low-profile docks that secure to a crossbeam rather than to the top of the printer's frame using parts from three sourcess. The first source, cjackson234 on Printables, provides "base minimal.stl":
+- https://www.printables.com/model/994635-stealthchanger-stealthburner-minimal-docks-aka-hap
 
 The second source, arthur belanger on Printables, replaces the multi-part front of the dock with a single-part iteration:
-https://www.printables.com/model/1063297-one-piece-docks-remix-of-crabby-docks/files
+- https://www.printables.com/model/1063297-one-piece-docks-remix-of-crabby-docks/files
 
 The third source is back with DraftShift for their modular docks, particularly the blocker. I used the spring steel body approach to use hobby blades with a molded silicone pad; if you prefer to use the cup style, you can go with that as well:
-https://github.com/DraftShift/ModularDock/tree/main/STLs/Blockers
+- https://github.com/DraftShift/ModularDock/tree/main/STLs/Blockers
 
 
 # 2) Heat-Treating Process for Backplates
