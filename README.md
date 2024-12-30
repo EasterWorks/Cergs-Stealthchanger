@@ -1,23 +1,24 @@
 # Cergs-Stealthchanger
 
-Repo status: PROTOTYPE (not ready for public use, stay tuned)  
+Repo status: IN TESTING (not ready for public reference, but maybe helpful for guidance)  
 
-This repo contains my configurations and settings for my Stealthchanger build.  
+This repo contains my configurations and customizations for my Stealthchanger build.  
 
-This repo may be useful for you if you are doing a Stealthchanger build on a Voron 2.4 or Trident and have the following considerations in mind:  
+This repo may be useful to you if you have similar design constraints and requirements to my own:
 
-- You are using the LDO Nitehawk-SB, Nitehawk-36, or other USB toolhead instead of CANBUS.
+- You have a 300mm Voron 2.4r2.
+- You want to use Stealthburner toolheads with the E3D Revo hotend ecosystem.
+- You are using LDO's Nitehawk-SB or Nitehawk-36 toolhead boards and Isik Tech's Birds' Nest for toolhead board networking.
 - You are using the standard X/Y endstops that are located on the intersection of the X and Y axiis rather than the toolhead-mounted endstops or sensorless homing.
 - You are using OptoTAP v2.4.1 for your Z axis probe and endstop trigger.
 - You are me in the future and nuked your config files again.
 
 
-
 In addition, I have edited and provided a few STL's that improve upon the original design and/or make it more suitable for the above considerations.  
 
-This repo is under construction. I will update this document when it is in its "final" version (ie. a version where everything can be thrown together to create a working setup).  
+This repo is under construction. The top line of this readme document says "Repo status" - I will keep this up to date as I update my progress on the toolchanger project.
 
-If you have any questions about necessary plugins or part designs, please reach out to the original creators (whom will be listed and credited when their content is used).  
+If you have any questions about necessary plugins or part designs, please reach out to the original creators (whom will be listed and credited when their content is used). I also HIGHLY recommend joining the public Stealthchanger Discord channel, link here: https://discord.gg/kXuEYBsa
 
 
 
@@ -31,6 +32,7 @@ https://github.com/DraftShift/StealthChanger
 DraftShift Design "klipper-toolchanger"  
 https://github.com/DraftShift/klipper-toolchanger  
 
+Thiessen with DraftShift Design for being INCREDIBLY helpful and patient with helping the community find answers when needed.
 
 
 
@@ -42,6 +44,8 @@ https://github.com/DraftShift/klipper-toolchanger
 12/24/2024:
 -Added OrcaSlicer start gcode.
 
+12/29/30:
+-Updated all CFG files as the project is now functional (in testing)
 
 
 
