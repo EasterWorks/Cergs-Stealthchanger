@@ -1,11 +1,6 @@
-; The following start gcode will get you up and running in OrcaSlicer with two toolheads. Other slicers TBD. See notes on each line for details.
+; start gcode for Orca Slicer!
+; this is the gcode from the Toolchanger github repo, but I have changed "PRINT_START" to "TOOLCHANGER_PRINT_START" to match the edits made in my toolchanger.cfg file in this repo.
+; this will accomodate for up to 6 toolheads. If you are planning on adding more than 6, you will need to iterate more of these "{if is_extruder_used[#]}T#_TEMP={first_layer_temperature[#]}{endif} " lines.
+; this all needs to be copy and pasted as one line into your Start Gcode field in Orca Slicer. You can omit these comment lines.
 
-SET_HEATER_TEMPERATURE HEATER=heater_bed TARGET=[first_layer_bed_temperature] ; this sets the bed temperature to the first layer temperature as specified in your filament settings.
-M190 S[first_layer_bed_temperature] ; this instructs the printer to wait until the bed temperature is reached.
-T[initial_tool] ; this selects the initial tool used for the print just by passing the generic "T1", "T2", etc commands into the console.
-PRINT_START ; this starts your PRINT_START command, which should contain homing, bed mesh, nozzle cleaning, etc.
-SET_HEATER_TEMPERATURE HEATER={if is_extruder_used[0]}extruder TARGET={first_layer_temperature[0]}{endif}{if is_extruder_used[1]}extruder1 TARGET={first_layer_temperature[1]}{endif} ; this is to set the extruder temperature. 
-M109 S{if is_extruder_used[0]}{first_layer_temperature[0]}{endif}{if is_extruder_used[1]}extruder1{first_layer_temperature[1]}{endif} ; instructs the printer to wait for nozzle temp to be reached. 
-
-; Note: If you use more than two toolheads, you will need to expand upon lines 7 and 8 above. And if you are using different names for your extruders (NOT your tools; they are different!), you'll need to change the names in the above example to fit.
-; If you are only using two toolheads and have the same naming convention for your extruders as I do above, simply copy and paste lines 3-8 from here into your Start Gcode field in OrcaSlicer.
+TOOLCHANGER_PRINT_START TOOL_TEMP={first_layer_temperature[initial_tool]} {if is_extruder_used[0]}T0_TEMP={first_layer_temperature[0]}{endif} {if is_extruder_used[1]}T1_TEMP={first_layer_temperature[1]}{endif} {if is_extruder_used[2]}T2_TEMP={first_layer_temperature[2]}{endif} {if is_extruder_used[3]}T3_TEMP={first_layer_temperature[3]}{endif} {if is_extruder_used[4]}T4_TEMP={first_layer_temperature[4]}{endif} {if is_extruder_used[5]}T5_TEMP={first_layer_temperature[5]}{endif}  BED_TEMP=[first_layer_bed_temperature] TOOL=[initial_tool]
