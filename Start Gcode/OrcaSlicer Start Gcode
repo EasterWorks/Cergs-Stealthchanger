@@ -1,6 +1,0 @@
-; start gcode for Orca Slicer!
-; this is the gcode from the Toolchanger github repo, but I have changed "PRINT_START" to "TOOLCHANGER_PRINT_START" to match the edits made in my toolchanger.cfg file in this repo.
-; this will accomodate for up to 6 toolheads. If you are planning on adding more than 6, you will need to iterate more of these "{if is_extruder_used[#]}T#_TEMP={first_layer_temperature[#]}{endif} " lines.
-; this all needs to be copy and pasted as one line into your Start Gcode field in Orca Slicer. You can omit these comment lines.
-
-TOOLCHANGER_PRINT_START TOOL_TEMP={first_layer_temperature[initial_tool]} {if is_extruder_used[0]}T0_TEMP={first_layer_temperature[0]}{endif} {if is_extruder_used[1]}T1_TEMP={first_layer_temperature[1]}{endif} {if is_extruder_used[2]}T2_TEMP={first_layer_temperature[2]}{endif} {if is_extruder_used[3]}T3_TEMP={first_layer_temperature[3]}{endif} {if is_extruder_used[4]}T4_TEMP={first_layer_temperature[4]}{endif} {if is_extruder_used[5]}T5_TEMP={first_layer_temperature[5]}{endif}  BED_TEMP=[first_layer_bed_temperature] TOOL=[initial_tool]
