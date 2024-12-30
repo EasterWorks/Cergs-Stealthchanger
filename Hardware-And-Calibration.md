@@ -15,7 +15,7 @@ Complete the following sections in order to replicate my process.
 As this repo is targeted toward people wanting to use the Stealthburner toolhead, we'll first talk about that.
 
 
-_ECAS fitting for Clockwork 2_
+### ECAS fitting for Clockwork 2
 
 First up: I HIGHLY advise printing a CW2 housing with allowance for an ECAS fitting. I used this one by AlexanderT_Moss on Printables:
 - https://www.printables.com/model/433797-clockwork-2-ecas-fitting-for-ercf
