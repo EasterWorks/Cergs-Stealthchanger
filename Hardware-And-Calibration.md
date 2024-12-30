@@ -6,11 +6,12 @@ Complete the following sections in order to replicate my process.
 1) Print Selection
 2) Heat-Treating Process for Backplates
 3) Assembly Notes
-5) Dock Parking Calibration, Testing, and Safe Zone Specification
-6) Nozzle Offsets - Probe-to-Nozzle and Gcode
-7) Nozzle Offsets - X/Y Offset
+4) Dock Parking Calibration, Testing, and Safe Zone Specification
+5) Nozzle Offsets - Probe-to-Nozzle and Gcode
+6) Nozzle Offsets - X/Y Offset
+7) PID, Input Shaper, Extruder Rotation Distance, and Pressure Advance Tuning
 
-# 1) Print Selection
+# 1. Print Selection
 
 As this repo is targeted toward people wanting to use the Stealthburner toolhead, we'll first talk about that.
 
@@ -70,7 +71,7 @@ The third source is back with DraftShift for their modular docks, particularly t
 - https://github.com/DraftShift/ModularDock/tree/main/STLs/Blockers
 
 
-# 2) Heat-Treating Process for Backplates
+# 2. Heat-Treating Process for Backplates
 
 I have seen this documented both in the Stealthchanger Discord server as well as in the Stealthchanger repo wiki. This is intended to improve the fitup between your backplates and the shuttle. The shuttle should already be installed on the gantry at this point. Here is the process I did:
 
@@ -86,14 +87,14 @@ I have seen this documented both in the Stealthchanger Discord server as well as
 This sounds a bit annoying, and it is - but this is how you get really accurate results with the OptoTAP in my experience.
 
 
-# 3) Assembly Notes
+# 3. Assembly Notes
 - Ensure the X-axis dragchain is eliminated. Y-axis dragchain needs to remain in place for the X/Y endstop cable.
 - Ensure the Z axis dragchain allows the Z axis to move cleanly through its entire travel to the top. If it's getting caught on the guide stop mounted on the rear of the gantry, move the guide stop.
 - When installing the dock crossbar, try to get it as even and square to the frame as possible. You won't get it perfectly but we can adjust for sub-mm variances in the firmware later.
 - If you had a nozzle brush in the back-right corner of the printer that you used before, it will probably be offset with the modified shuttle. The bed needs to move forward to accomodate for this - or you need to move the brush to the front of the bed and modify your CLEAN_NOZZLE gcode macro.
 
 
-# 4) Dock Parking Calibration, Testing, and Safe Zone Specification
+# 4. Dock Parking Calibration, Testing, and Safe Zone Specification
 
 For setting up your dock positions:
 - First, attach the tool you want to calibrate to the shuttle by hand, then home all axiis and QGL.
@@ -122,7 +123,7 @@ Now we're going to look at the _Safe Zone_. This is a parameter you can edit in 
 Why the Safe Zone? Well, if you don't specify this, your toolhead may get too close to the dock when switching tools and end up ramming the bottom of the cowl into the lip of the dock as it rounds out the movement path. You can adjust these values as you see fit, but be sure to do it in small increments to avoid any unfortunate accidents!
 
 
-# 5) Nozzle Offsets - Probe-to-Nozzle and Gcode
+# 5. Nozzle Offsets - Probe-to-Nozzle and Gcode
 
 When T0 does its initial homing routine and bed mesh at the start of a print, its nozzle offset is applied to the gantry. Meaning if the T0 offset is, say, -1.23, that will 
 be the offset applied for the gantry as it is in motion during the print.
@@ -138,8 +139,10 @@ a positive gcode offset will move the tool "further" on its given axis (toward i
 In your toolhead config, set the real nozzle offset (the result you get when running PROBE_CALIBRATE) as the z_offset value under [tool_probe tool#]. When you have determined
 the needed gcode offset per the above information, set that as the gcode_z_offset value under [tool tool#].
 
+### Note: When you do your nozzle offset calibration, before saving config and restarting firmware, check the bottom of printer.cfg to see if it's going to try to insert new nozzle offset parameters. DELETE THIS before saving config and restarting firmware. These params need to be updated per toolhead, NOT in printer.cfg!
 
-# 6) Nozzle Offsets - X/Y Offset
+
+# 6. Nozzle Offsets - X/Y Offset
 
 These offsets will entirely be done as gcode offset, particularly gcode_x_offset and gcode_y_offset values under [tool tool#]. My typical approach is to slice a 20mmx4mm cube,
 starting with T0, and then insert a filament change to T1 once it reaches 2mm tall. When finished, you should mark which side of the cube was facing you when you pulled it off
@@ -147,3 +150,8 @@ of the bed to maintain the orientation.
 
 When finished, the two sections will most likely be offset by a small amount. I use a digital depth gauge to determine just how offset these are and note that for both axiis.
 Once noted, enter the information for your gcode_x_offset and gcode_y_offset values as mentioned above. Remember; positive values move TOWARD the axis' travel limit.
+
+
+# 7. PID, Input Shaper, Extruder Rotation Distance, and Pressure Advance Tuning
+
+PID, Input Shaper, Extruder Rotation Distance, and PA tuning are all done per-toolhead.
