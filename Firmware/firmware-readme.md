@@ -1,26 +1,31 @@
-TBD - this document is to describe needed edits to printer.cfg and describe what other included CFG files do. also to list plugins needed like multi-fan, toolchanger, etc
+# Description of CFG files:
 
-# Nozzle Offsets - probe-to-nozzle and gcode
+As a forenote here: most people leave the folder for all of the Toolchanger and Stealthchanger-specific cfg's in a folder called "Tapchanger" because that's how the original configs are built. I have changed this folder to be named "Stealthchanger" as that's more fitting. This is a personal choice, do what you prefer but pay attention if you name it something other than "Stealthchanger"!
 
-When T0 does its initial homing routine and bed mesh at the start of a print, its nozzle offset is applied to the gantry. Meaning if the T0 offset is, say, -1.23, that will 
-be the offset applied for the gantry as it is in motion during the print.
+_printer.cfg_
+Naturally, this is your printer's config file. It's where the baseline definitions for where hardware is connected to on your mainboard lives. Note that things like the probe section and extruder config have been removed - those are now in t0 and t1 CFG's. Also note the includes and their order.
 
-If T1 has a substantially different nozzle offset, say -0.23, this will result in the nozzle being shoved 1mm too far into the bed when T1 is switched to and begins printing. 
-This can lead to stacking tolerance problems when printing parts with embedded color changes (for example: a black circle in the side of a square).
+_toolchanger.cfg_
+This is where almost everything Toolchanger-specific is going to live. All you really need to change here are "params_safe_y" and "params_close_y". More info on that in "Docking Calibration" in the calibration manual linked below.
 
-Because of this, you need to account for that difference in the gcode offset. In this specific example, your gcode Z offset would be 1.
+_toolchanger_macros.cfg_
+This is where the Toolchanger-specific macros go. Note that I have changed the PRINT_START and PRINT_END macro names to "TOOLCHANGER_PRINT_START" and "TOOLCHANGER_PRINT_END", and commented out a few lines that only seemingly exist to report errors. I may uncomment those eventually but when I see "unknown command" in the terminal and the command doesn't appear to do anything, it will get excluded.
 
-Note: Gcode offsets and nozzle-to-probe offsets are read differently. A negative value for a nozzle-to-probe offset will increase the distance between the nozzle and the bed; 
-a positive gcode offset will move the tool "further" on its given axis (toward its movement limit).
+_stealthchanger_macros.cfg_
+This includes some additional and entirely optional macros. You don't have to use this.
 
-In your toolhead config, set the real nozzle offset (the result you get when running PROBE_CALIBRATE) as the z_offset value under [tool_probe tool#]. When you have determined
-the needed gcode offset per the above information, set that as the gcode_z_offset value under [tool tool#].
+_t#.cfg_
+This is the cfg for your toolhead! I have added a few notes to the CFG's provided in this repo where you need to pay extra attention.
 
-# Nozzle Offsets - X/Y Offset
+_tool_detection.cfg_
+This cfg includes the crash detection functionality and is important for avoiding accidents. I'm not super sure why it's seprate from the main toolchanger.cfg file, but as presented it shall stay on my printer.
 
-These offsets will entirely be done as gcode offset, particularly gcode_x_offset and gcode_y_offset values under [tool tool#]. My typical approach is to slice a 20mmx4mm cube,
-starting with T0, and then insert a filament change to T1 once it reaches 2mm tall. When finished, you should mark which side of the cube was facing you when you pulled it off
-of the bed to maintain the orientation.
+_calibrate_offsets.cfg_
+This cfg includes some functionality for calibrating the nozzle offsets between different toolheads using probes like Sexball. I do adjustments with a test print and a digital depth gauge, which I cover under "Nozzle Offsets - probe-to-nozzle and gcode" in the calibration manual linked below.
 
-When finished, the two sections will most likely be offset by a small amount. I use a digital depth gauge to determine just how offset these are and note that for both axiis.
-Once noted, enter the information for your gcode_x_offset and gcode_y_offset values as mentioned above. Remember; positive values move TOWARD the axis' travel limit.
+_homing.cfg_
+This cfg includes the new homing override you'll want to use, sensorless homing functionality (which I have commented out because we're using physical endstops here), and some tool offset functionality for homing, gcode, and meshing. The latter three aren't called in my config but are there for testing if needed.
+
+
+# Calibration manual:
+https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Calibration.md
