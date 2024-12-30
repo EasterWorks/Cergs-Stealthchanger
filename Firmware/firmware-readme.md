@@ -28,4 +28,4 @@ This cfg includes the new homing override you'll want to use, sensorless homing 
 
 
 # Calibration manual:
-https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Calibration.md
+https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md
