@@ -1,1 +1,1 @@
-
+The presented print start and print end gcode are intended for use in OrcaSlicer. They are slightly modified versions of the start and end print gcodes presented in the Stealthchanger repo (I just changed the names of PRINT_START and PRINT_END to match my macros in this repo, that's all).
