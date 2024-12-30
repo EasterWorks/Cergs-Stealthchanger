@@ -1,3 +1,40 @@
+Complete the following sections in order to replicate my process.
+
+# Table of Contents
+1) Print Selection
+
+
+# Print Selection
+
+As this repo is targeted toward people wanting to use the Stealthburner toolhead, we'll first talk about that.
+
+First up: I HIGHLY advise printing a CW2 housing with allowance for an ECAS fitting. I used this one by AlexanderT_Moss on Printables:
+https://www.printables.com/model/433797-clockwork-2-ecas-fitting-for-ercf
+
+The reason for using an ECAS fitting is because the reverse bowden tubes will be flexing around a bit more than usual when constrained to the umbilical.
+
+Last part for the toolhead itself - you'll want a PG7 gland mount on the Stealthburners to replace the original X axis dragchain mount. I use this one by CstmCreations_174350 on Printables:
+https://www.printables.com/model/463220-voron-cw2-stealthburner-ebb-sb2240-pg7-umbilical-m
+
+Next up, your umbilical clips. These are largely up to you - I designed ones that would slip over the Nitehawk USB cable, allow a channel for the reverse bowden tube, and use two small zipties to create just enough tension to grip on to the cable and bowden without crushing them. It also has holes to allow for 1mm piano wire as the stiffening component of the umbilical. You can find them here:
+https://www.printables.com/model/1127631-ldo-nitehawk-umbilical-clips-for-stealthchanger-ta
+
+I use four per umbilical.
+
+Now let's look at making a home for the Bird's Nest and a new exhaust plate to allow the umbilicals into the print chamber. For housing the Bird's Nest, print the fanny pack by Isiks Tech:
+https://github.com/xbst/Birds-Nest/tree/master/Mounts/V2
+
+I used 3M double-sided tape to stick it to the back panel a few inches under the exhaust plate.
+
+Now for the exhaust plate itself - I designed one that would allow you to non-destrucitvely insert and retain the umbilicals. You can find it here on Printables:
+https://www.printables.com/model/1127639-ldo-nitehawk-umbilical-exhaust-plate-for-voron-24
+
+Finally, we need to print our docks. I used low-profile docks that secure to a crossbeam rather than to the top of the printer's frame. You can find them here 
+
+
+
+
+
 # Dock Parking Calibration, Testing, and Safe Zone Specification
 
 For setting up your dock positions:
