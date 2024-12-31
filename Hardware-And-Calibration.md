@@ -6,10 +6,14 @@ Complete the following sections in order to replicate my process.
 1) Print Selection
 2) Heat-Treating Process for Backplates
 3) Assembly Notes
-4) Dock Parking Calibration, Testing, and Safe Zone Specification
-5) Nozzle Offsets - Probe-to-Nozzle and Gcode
-6) Nozzle Offsets - X/Y Offset
-7) PID, Input Shaper, Extruder Rotation Distance, and Pressure Advance Tuning
+4) Special Notes on OptoTAP
+5) PID, Input Shaper, Extruder Rotation Distance, and Pressure Advance Tuning
+6) Dock Parking Calibration, Testing, and Safe Zone Specification
+7) Purge, Preheat, and Other Relevant Orca Slicer Settings
+8) Machine Start and Machine End Gcode
+9) Nozzle Offsets - Probe-to-Nozzle and Gcode
+10) Nozzle Offsets - X/Y Offset
+
 
 # 1. Print Selection
 
@@ -29,13 +33,18 @@ Next you'll need both the Stealthburner backplates and a shuttle. Here are the b
 - https://github.com/DraftShift/StealthChanger/blob/main/STLs/Backplates/StealthBurner.stl
 
 As for the shuttle, I have modified DSD's design to allow you to loop the belts back into and out of the housing to prevent cutting the belts too short. It can be found in this repo:
-https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/STLs/MGN12%20Shuttle.stl
+- https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/STLs/MGN12%20Shuttle.stl
 
 YOU WILL NOTICE the "fin" on top of the shuttle is too long for the backplate to sit properly. Leave it this way until the shuttle is installed and you have a backplate outfitted with pins. CAREFULLY trim the fin on top of the shuttle until whichever backplate is going on your T0 sits as flat to the shuttle as it's going to (force it if needed - poor fitup will be adjusted later). I found the default height of the fin to be too short.
 
 It is also worth noting that this will move your Y axis about 5mm toward the "front" of the printer. You may need to adjust how your bed is positioned to accomodate.
 
 You need one backplate per toolhead and only one shuttle.
+
+Additionally, you will need to print the X axis prod included in this repo:
+- https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/STLs/x-axis-prod.stl
+
+The X axis prod is secured to the bottom of the shuttle using two M3x8 SHCS. Its job is to touch the X axis endstop when it reaches its minimum distance. This isn't accounted for in the original shuttle design as the intention is to use sensorless homing on X/Y, but we aren't doing that.
 
 
 ### PG7 gland mount for Stealthburner
@@ -94,7 +103,27 @@ This sounds a bit annoying, and it is - but this is how you get really accurate 
 - If you had a nozzle brush in the back-right corner of the printer that you used before, it will probably be offset with the modified shuttle. The bed needs to move forward to accomodate for this - or you need to move the brush to the front of the bed and modify your CLEAN_NOZZLE gcode macro.
 
 
-# 4. Dock Parking Calibration, Testing, and Safe Zone Specification
+# 4. Special Notes on OptoTAP
+When you get your toolheads put together, one of the first things you should do is repeatedly run a probe using PROBE_CALIBRATE to help smooth out any rough spots on the contact points. In conjunction with the previously-mentioned heat-treating method, this will help greatly improve your OptoTAP readings.
+
+- Attach the toolhead you want to break in to the shuttle, home all axiis, and QGL.
+- Move the toolhead to the center of your bed.
+- Run the command PROBE_CALIBRATE SAMPLES=n where n = the number of Z axis probes you'd like to do. As you've already homed on Z successfully by this point, we know the probe is working, so we now want to run it up to as many as 500 probing samples to wear down contact surfaces into smooth operation. For example, PROBE_CALIBRATE SAMPLES=500 will probe the Z axis 500 times.
+- Upon completion, run PROBE_CALIBRATE SAMPLES=25 and review the variance results that are reported in the console. You want the variance to be at an absolute maximum 0.025mm (the absolute minimum recommended for Klipper), but using the methods described here, I have achieved a variance as low as 0.00028mm. When you achieve good results, edit your QGL macro in printer.cfg to the recommended 0.00750mm tolerance.
+
+
+# 5. PID, Input Shaper, Extruder Rotation Distance, and Pressure Advance Tuning
+PID, Input Shaper, extruder rotation distance, and pressure advance need to be done _per toolhead_. Simply attach whatever tool you wish to calibrate to the shuttle, home and QGL, and then run the standard tests as outline in the Klipper wiki:
+
+ - PID tuning: https://www.klipper3d.org/Config_checks.html#calibrate-pid-settings
+ - Input shaper: https://www.klipper3d.org/Measuring_Resonances.html#measuring-the-resonances
+ - Extruder rotation distance (courtesy of Ellis' print tuning guide): https://ellis3dp.com/Print-Tuning-Guide/articles/extruder_calibration.html
+ - Pressure advance tuning (again, courtesy of Ellis): https://ellis3dp.com/Print-Tuning-Guide/articles/index_pressure_advance.html
+
+The only difference here is that instead of inputting these values to printer.cfg, you're going to input them in the relevant toolhead's cfg file. For example, if you have your results for input shaper when measuring on T0, you need to input those figures into t0.cfg.
+
+
+# 6. Dock Parking Calibration, Testing, and Safe Zone Specification
 
 For setting up your dock positions:
 - First, attach the tool you want to calibrate to the shuttle by hand, then home all axiis and QGL.
@@ -123,7 +152,38 @@ Now we're going to look at the _Safe Zone_. This is a parameter you can edit in 
 Why the Safe Zone? Well, if you don't specify this, your toolhead may get too close to the dock when switching tools and end up ramming the bottom of the cowl into the lip of the dock as it rounds out the movement path. You can adjust these values as you see fit, but be sure to do it in small increments to avoid any unfortunate accidents!
 
 
-# 5. Nozzle Offsets - Probe-to-Nozzle and Gcode
+# 7. Purge, Preheat, and Other Relevant Orca Slicer Settings
+
+So first, you actually need to enable multi-material printing in Orca Slicer. Open your printer settings and switch to the "Multimaterial" tab. Under "Single extruder multi-material setup", ensure "Single Extruder Multi Material" is unticked, then enter "2" (or whatever number of toolheads you have) for "Extruders". At the very bottom of this page, you can enter a value in seconds for "Tool Change Time" - this is how long it takes your printer to depart from the print, switch tools, and return to the print. You should time and update this after dialling in your idle and preheat temperatures to ensure you get useful print time estimates.
+
+After specifying that you have two extruders, a new tab called "Extruder 2" will appear alongside Extruder 1. You can enter retraction values and all the other fun per-toolhead settings you wish here, but leave the offset positions for the toolhead .cfg file.
+
+I highly advise still using a purge tower despite no real need to flush the nozzle. Using a purge tower accomplishes two things:
+- It allows the filament in the active tool to fully un-retract before reaching the print. If not accounted for and your retraction settings aren't perfect, your first layer after the tool change will be ratty.
+- It catches nearly all of the ooze and whisps that accumulate on the nozzle in the brief travel from undocking to reaching the print.
+
+You may omit the purge tower if your retraction settings are perfect and your toolchanges are super rapid, but a purge tower makes both of those much less of an issue and is still only fractionally wasteful compared to systems like the AMS. As of now, purge tower ("prime tower") settings in Orca Slicer are located in the global Multimaterial settings tab.
+
+In addition, you will want to implement preheating and idle temp settings. Preheating does what you'd think; it fires off gcode at an estimated time to the next toolhead to be used to get it up to printing temperature, making the toolchange occur much faster. Preheating settings can also be found in the global Multimaterial settings tab in Orca Slicer. Leave the temperature variation delta at 0c because we're going to use per-material settings for that later. What you should then do is get your hotend up to 150-160c, where filament will be hot but not oozing yet, and then time how long it takes for the hotend to reach the printing temperature of the material you want to use. Add 10 seconds to this time and enter that for the "preheat time". Note that when you first start a print, the inactive toolhead won't be preheated to the idle temperature, so your first tool change will always be a little longer - you don't need to accomodate for that in the slicer settings, that's just how it is, so be aware.
+
+Next we need to actually input the idle temperature we want to use. Next to the filament you have selected for the toolhead under "Filament", click the edit button, 
+
+
+# 8. Machine Start and Machine End Gcode
+
+I have supplied the needed start and end print gcodes in the Gcode folder for Orca Slicer, as Orca Slicer currently has the friendliest functionality and most up to date features in my opinion:
+- Print start: https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Gcode/OrcaSlicer%20Start%20Gcode
+- Print end: https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Gcode/Orca%20Slicer%20end%20gcode
+
+These will work with the other example CFG's I've provided here. The only special consideration is that, in order to differentiate toolchange starts/ends from non-toolchanger starts/ends, I have renamed the toolchanger print start and print end gcodes both in toolchanger.cfg and in the print start/end gcodes that need to be input to Orca Slicer. 
+
+Otherwise, make sure the Change Filament Gcode field has the following comment:
+- ;Leave blank
+
+This will prevent Orca Slicer from inserting its default filament change gcode. No other gcode settings are needed in Orca Slicer other than our start and end print gcode.
+
+
+# 9. Nozzle Offsets - Probe-to-Nozzle and Gcode
 
 When T0 does its initial homing routine and bed mesh at the start of a print, its nozzle offset is applied to the gantry. Meaning if the T0 offset is, say, -1.23, that will 
 be the offset applied for the gantry as it is in motion during the print.
@@ -142,7 +202,7 @@ the needed gcode offset per the above information, set that as the gcode_z_offse
 ### Note: When you do your nozzle offset calibration, before saving config and restarting firmware, check the bottom of printer.cfg to see if it's going to try to insert new nozzle offset parameters. DELETE THIS before saving config and restarting firmware. These params need to be updated per toolhead, NOT in printer.cfg!
 
 
-# 6. Nozzle Offsets - X/Y Offset
+# 10. Nozzle Offsets - X/Y Offset
 
 These offsets will entirely be done as gcode offset, particularly gcode_x_offset and gcode_y_offset values under [tool tool#]. My typical approach is to slice a 20mmx4mm cube,
 starting with T0, and then insert a filament change to T1 once it reaches 2mm tall. When finished, you should mark which side of the cube was facing you when you pulled it off
@@ -152,6 +212,6 @@ When finished, the two sections will most likely be offset by a small amount. I 
 Once noted, enter the information for your gcode_x_offset and gcode_y_offset values as mentioned above. Remember; positive values move TOWARD the axis' travel limit.
 
 
-# 7. PID, Input Shaper, Extruder Rotation Distance, and Pressure Advance Tuning
+
 
 PID, Input Shaper, Extruder Rotation Distance, and PA tuning are all done per-toolhead.
