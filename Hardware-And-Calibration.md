@@ -1,9 +1,8 @@
-# THIS IS A WIP
-
+## HOW DO I STEALTHCHANGER?
 Complete the following sections in order to replicate my process.
 
 # Table of Contents
-1) Print Selection
+1) Toolhead Print Selection
 2) Heat-Treating Process for Backplates
 3) Assembly Notes
 4) Special Notes on OptoTAP
@@ -13,9 +12,10 @@ Complete the following sections in order to replicate my process.
 8) Machine Start and Machine End Gcode
 9) Nozzle Offsets - Probe-to-Nozzle and Gcode
 10) Nozzle Offsets - X/Y Offset
+11) Final Considerations
 
 
-# 1. Print Selection
+# 1. Toolhead Print Selection
 
 As this repo is targeted toward people wanting to use the Stealthburner toolhead, we'll first talk about that.
 
@@ -166,7 +166,9 @@ You may omit the purge tower if your retraction settings are perfect and your to
 
 In addition, you will want to implement preheating and idle temp settings. Preheating does what you'd think; it fires off gcode at an estimated time to the next toolhead to be used to get it up to printing temperature, making the toolchange occur much faster. Preheating settings can also be found in the global Multimaterial settings tab in Orca Slicer. Leave the temperature variation delta at 0c because we're going to use per-material settings for that later. What you should then do is get your hotend up to 150-160c, where filament will be hot but not oozing yet, and then time how long it takes for the hotend to reach the printing temperature of the material you want to use. Add 10 seconds to this time and enter that for the "preheat time". Note that when you first start a print, the inactive toolhead won't be preheated to the idle temperature, so your first tool change will always be a little longer - you don't need to accomodate for that in the slicer settings, that's just how it is, so be aware.
 
-Next we need to actually input the idle temperature we want to use. Next to the filament you have selected for the toolhead under "Filament", click the edit button, 
+Next we need to actually input the idle temperature we want to use. Next to the filament you have selected for the toolhead under "Filament", click the edit button. Under "Basic Information", near the bottom of that section, you'll see "Idle Temperature". Set that to the idle temperature you wish (I use 160C for Elegoo PLA+, for example). 
+
+Finally, and this is more of a quality of life note - your print should always start on T0 so the offsets on your other toolheads apply correctly. Orca Slicer will start with whatever toolhead has the most volume on the first layer. So if you're printing something that starts mostly with the material you have loaded in T1, you can add a primitive cube with only one layer of height and just enough surface area to print with the material in T0 to trick Orca Slicer into thinking T0 needs to be the start nozzle. I'm still looking for a better way around this, but it's better than a print failing.
 
 
 # 8. Machine Start and Machine End Gcode
@@ -212,6 +214,9 @@ When finished, the two sections will most likely be offset by a small amount. I 
 Once noted, enter the information for your gcode_x_offset and gcode_y_offset values as mentioned above. Remember; positive values move TOWARD the axis' travel limit.
 
 
+# 11. Final Considerations
+
+Once you have achieved reliable toolchanging capabilities, you should get your extrusion multiplier dialled in and revise PID, Input Shaper, PA, retraction, etc. settings if needed. Otherwise, congratulations - you _should_ have a working Stealthchanger now.
 
 
-PID, Input Shaper, Extruder Rotation Distance, and PA tuning are all done per-toolhead.
+
