@@ -16,7 +16,7 @@ Complete the following sections in order to replicate my process.
 11) Final Considerations
 
 
-### 0. Add-Ons and Updates for Klipper
+# 0. Add-Ons and Updates for Klipper
 
 You will need to install the following Klipper add-ons:
 - Klipper-Toolchanger: https://github.com/viesturz/klipper-toolchanger/
@@ -26,7 +26,7 @@ This includes everything the printer will need for the actual toolchanging routi
 Make sure Klipper is up-to-date before beginning, and if necessary, update Klipper on your Bird's Nest and your Nitehawk toolhead boards. Proper functionality apparently relies upon features updated/added to Klipper around July of 2024, so you need a version that's newer than that. When you buy the Bird's Nest from Isik and the Nitehawks from LDO, they _should_ already be on the latest release of Klipper when you receive them, but it's good to double-check.
 
 
-### 1. Toolhead Print Selection
+# 1. Toolhead Print Selection
 
 As this repo is targeted toward people wanting to use the Stealthburner toolhead, we'll first talk about that.
 
