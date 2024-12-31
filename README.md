@@ -56,6 +56,7 @@ All the people I've linked under printed part recommendations in the above guide
 - Updated all CFG files as the project is now functional (in testing)
 
 12/30/2024:
+- Final touches on cfg examples.
 - Refined and added a ton of info to the guide document.
 - Updated repo status from "IN TESTING" to "READY".
 
