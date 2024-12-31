@@ -125,19 +125,20 @@ When you get your toolheads put together, one of the first things you should do 
 
 # Nozzle Offsets - Probe-to-Nozzle and Gcode
 
-When T0 does its initial homing routine and bed mesh at the start of a print, its nozzle offset is applied to the gantry. Meaning if the T0 offset is, say, -1.23, that will 
+Follow the typical Klipper Z offset calibration procedure on T0 EXCEPT for saving config after the calibration - simply note the offset as it is reported in the console:
+https://www.klipper3d.org/Probe_Calibrate.html#calibrating-probe-z-offset
+
+When T0 does its initial homing routine and bed mesh at the start of a print, its nozzle offset is applied to the gantry. Meaning if the T0 offset is, say, -1.23mm, that will 
 be the offset applied for the gantry as it is in motion during the print.
 
-If T1 has a substantially different nozzle offset, say -0.23, this will result in the nozzle being shoved 1mm too far into the bed when T1 is switched to and begins printing. 
-This can lead to stacking tolerance problems when printing parts with embedded color changes (for example: a black circle in the side of a square).
+If T1 has a substantially different nozzle offset, say -0.23mm, this will result in the nozzle being shoved 1mm too far into the bed when T1 is switched to and begins printing. 
+This can lead to stacking tolerance problems when printing parts with embedded color changes (for example: a black circle on the side of a cube).
 
 Because of this, you need to account for that difference in the gcode offset. In this specific example, your gcode Z offset would be 1.
 
-Note: Gcode offsets and nozzle-to-probe offsets are read differently. A negative value for a nozzle-to-probe offset will increase the distance between the nozzle and the bed; 
-a positive gcode offset will move the tool "further" on its given axis (toward its movement limit).
+Note: Gcode offsets in positive values move the toolhead toward the "max" position of that axis to compensate. Negative offsets go toward the "min" position.
 
-In your toolhead config, set the real nozzle offset (the result you get when running PROBE_CALIBRATE) as the z_offset value under [tool_probe tool#]. When you have determined
-the needed gcode offset per the above information, set that as the gcode_z_offset value under [tool tool#].
+In your toolhead config, set the real nozzle offset (the result you get in the console after finishing the PROBE_CALIBRATE procedure) as the z_offset value under [tool_probe tool#]. Ideally, do a test print with that value on that tool to verify that your first layer is good. When you have determined the needed gcode offset per the above information, set that as the gcode_z_offset value under [tool tool#].
 
 ### Note: When you do your nozzle offset calibration, before saving config and restarting firmware, check the bottom of printer.cfg to see if it's going to try to insert new nozzle offset parameters. DELETE THIS before saving config and restarting firmware. These params need to be updated per toolhead, NOT in printer.cfg!
 
@@ -204,8 +205,8 @@ Finally, and this is more of a quality of life note - your print should always s
 # Machine Start and Machine End Gcode
 
 I have supplied the needed start and end print gcodes in the Gcode folder for Orca Slicer, as Orca Slicer currently has the friendliest functionality and most up to date features in my opinion:
-- Print start: https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Gcode/OrcaSlicer%20Start%20Gcode
-- Print end: https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Gcode/Orca%20Slicer%20end%20gcode
+- Machine start: https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Gcode/OrcaSlicer%20Start%20Gcode
+- Machine end: https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Gcode/Orca%20Slicer%20end%20gcode
 
 These will work with the other example CFG's I've provided here. The only special consideration is that, in order to differentiate toolchange starts/ends from non-toolchanger starts/ends, I have renamed the toolchanger print start and print end gcodes both in toolchanger.cfg and in the print start/end gcodes that need to be input to Orca Slicer. 
 
