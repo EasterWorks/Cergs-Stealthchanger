@@ -112,6 +112,8 @@ This sounds a bit annoying, and it is - but this is how you get really accurate 
 - Ensure the Z axis dragchain allows the Z axis to move cleanly through its entire travel to the top. If it's getting caught on the guide stop mounted on the rear of the gantry, move the guide stop.
 - When installing the dock crossbar, try to get it as even and square to the frame as possible. You won't get it perfectly but we can adjust for sub-mm variances in the firmware later.
 - If you had a nozzle brush in the back-right corner of the printer that you used before, it will probably be offset with the modified shuttle. The bed needs to move forward to accomodate for this - or you need to move the brush to the front of the bed and modify your CLEAN_NOZZLE gcode macro.
+- If you have very old X/Y belts, this is a great opportunity to install new ones.
+- Also a great opportunity to install Beefy Front Idlers (BFI) if you haven't already: https://github.com/clee/VoronBFI
 
 
 # Special Notes on OptoTAP
@@ -120,7 +122,7 @@ When you get your toolheads put together, one of the first things you should do 
 - Attach the toolhead you want to break in to the shuttle, home all axiis, and QGL.
 - Move the toolhead to the center of your bed.
 - Run the command PROBE_CALIBRATE SAMPLES=n where n = the number of Z axis probes you'd like to do. As you've already homed on Z successfully by this point, we know the probe is working, so we now want to run it up to as many as 500 probing samples to wear down contact surfaces into smooth operation. For example, PROBE_CALIBRATE SAMPLES=500 will probe the Z axis 500 times.
-- Upon completion, run PROBE_CALIBRATE SAMPLES=25 and review the variance results that are reported in the console. You want the variance to be at an absolute maximum 0.025mm (the absolute minimum recommended for Klipper), but using the methods described here, I have achieved a variance as low as 0.00028mm. When you achieve good results, edit your QGL macro in printer.cfg to the recommended 0.00750mm tolerance.
+- Upon completion, run PROBE_CALIBRATE SAMPLES=25 and review the variance results that are reported in the console. You want the variance to be at an absolute maximum 0.025mm (the biggest variance recommended for Klipper), but using the methods described here, I have achieved a variance as low as 0.00028mm. When you achieve good results, edit your QGL macro in printer.cfg to the recommended 0.00750mm tolerance.
 
 
 # Nozzle Offsets - Probe-to-Nozzle and Gcode
@@ -231,6 +233,8 @@ Once noted, enter the information for your gcode_x_offset and gcode_y_offset val
 # Final Considerations
 
 Once you have achieved reliable toolchanging capabilities, you should get your extrusion multiplier dialled in and revise PID, Input Shaper, PA, retraction, etc. settings if needed. Otherwise, congratulations - you _should_ have a working Stealthchanger now.
+
+Make sure to go to the Stealthchanger Discord and request a serial! https://discord.gg/kXuEYBsa
 
 
 
