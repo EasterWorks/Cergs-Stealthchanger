@@ -1,6 +1,6 @@
 # Cergs-Stealthchanger
 
-Repo status: IN TESTING (not ready for public reference, but maybe helpful for guidance)  
+Repo status: READY (ready for public reference)  
 
 This repo contains my configurations and customizations for my Stealthchanger build.  
 
@@ -22,6 +22,10 @@ This repo is under construction. The top line of this readme document says "Repo
 If you have any questions about necessary plugins or part designs, please reach out to the original creators (whom will be listed and credited when their content is used). I also HIGHLY recommend joining the public Stealthchanger Discord channel, link here: https://discord.gg/kXuEYBsa
 
 
+## How to Stealthchanger
+
+I have created a guide in this repo that covers all the steps I took from day 1 to fully-functional. You can find it here: https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md
+
 
 ## Credits:  
 Viesturz, "tapchanger"  
@@ -30,11 +34,14 @@ https://github.com/viesturz/tapchanger
 DraftShift Design, "StealthChanger"  
 https://github.com/DraftShift/StealthChanger  
 
-DraftShift Design "klipper-toolchanger"  
+DraftShift Design & Viesturz "klipper-toolchanger"  
 https://github.com/DraftShift/klipper-toolchanger  
 
 Thiessen with DraftShift Design for being INCREDIBLY helpful and patient with helping the community find answers when needed.
 
+The Stealthchanger community for being encouraging and offering guidance.
+
+All the people I've linked under printed part recommendations in the above guide.
 
 
 ## Updates:
@@ -45,9 +52,11 @@ Thiessen with DraftShift Design for being INCREDIBLY helpful and patient with he
 12/24/2024:
 -Added OrcaSlicer start gcode.
 
-12/29/30:
+12/29/2024:
 -Updated all CFG files as the project is now functional (in testing)
 
-
+12/30/2024:
+-Refined and added a ton of info to the guide document.
+-Updated repo status from "IN TESTING" to "READY".
 
 
