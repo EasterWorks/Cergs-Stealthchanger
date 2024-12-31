@@ -7,6 +7,7 @@ This repo contains my configurations and customizations for my Stealthchanger bu
 This repo may be useful to you if you have similar design constraints and requirements to my own:
 
 - You have a 300mm Voron 2.4r2.
+- Your mainboard in a BTT Octopus Pro or board with similar capabilities.
 - You want to use Stealthburner toolheads with the E3D Revo hotend ecosystem.
 - You are using LDO's Nitehawk-SB or Nitehawk-36 toolhead boards and Isik Tech's Birds' Nest for toolhead board networking.
 - You are using the standard X/Y endstops that are located on the intersection of the X and Y axiis rather than the toolhead-mounted endstops or sensorless homing.
