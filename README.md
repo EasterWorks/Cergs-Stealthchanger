@@ -47,16 +47,16 @@ All the people I've linked under printed part recommendations in the above guide
 ## Updates:
 
 12/13/2024:  
--Added my initial configs assortment. Some are incomplete.  
+- Added my initial configs assortment. Some are incomplete.  
 
 12/24/2024:
--Added OrcaSlicer start gcode.
+- Added OrcaSlicer start gcode.
 
 12/29/2024:
--Updated all CFG files as the project is now functional (in testing)
+- Updated all CFG files as the project is now functional (in testing)
 
 12/30/2024:
--Refined and added a ton of info to the guide document.
--Updated repo status from "IN TESTING" to "READY".
+- Refined and added a ton of info to the guide document.
+- Updated repo status from "IN TESTING" to "READY".
 
 
