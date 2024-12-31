@@ -119,6 +119,8 @@ This sounds a bit annoying, and it is - but this is how you get really accurate 
 # Special Notes on OptoTAP
 When you get your toolheads put together, one of the first things you should do is repeatedly run a probe using PROBE_CALIBRATE to help smooth out any rough spots on the contact points. In conjunction with the previously-mentioned heat-treating method, this will help greatly improve your OptoTAP readings.
 
+Make sure your umbilical isn't too tight or too loose that it messes with your probing results! It's normal to adjust the length a few times in the PG7 connectors to ensure they aren't interfering. I advise not trimming and re-plugging the toolhead umbilical cable until you have locked in the positions for everything.
+
 - Attach the toolhead you want to break in to the shuttle, home all axiis, and QGL.
 - Move the toolhead to the center of your bed.
 - Run the command PROBE_CALIBRATE SAMPLES=n where n = the number of Z axis probes you'd like to do. As you've already homed on Z successfully by this point, we know the probe is working, so we now want to run it up to as many as 500 probing samples to wear down contact surfaces into smooth operation. For example, PROBE_CALIBRATE SAMPLES=500 will probe the Z axis 500 times.
