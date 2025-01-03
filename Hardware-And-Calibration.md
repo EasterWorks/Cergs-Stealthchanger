@@ -6,9 +6,10 @@ Complete the following sections in order to replicate my process.
 # Table of Contents
 - Add-Ons and Updates for Klipper
 - Printed Part Selection
+- Preparing, Assembling, and Installing the Shuttle
+- Preparing, Assembling, and Installing the Backplates
 - Heat-Treating Process for Backplates
-- Preparing, Assembling, and Installing the Shuttle 
-- Assembly Notes
+- Other Assembly Notes
 - Special Notes on OptoTAP
 - Nozzle Offsets - Probe-to-Nozzle and Gcode
 - PID, Input Shaper, Extruder Rotation Distance, and Pressure Advance Tuning
@@ -94,6 +95,32 @@ The third source is back with DraftShift for their modular docks, particularly t
 - https://github.com/DraftShift/ModularDock/tree/main/STLs/Blockers
 
 
+# - Preparing, Assembling, and Installing the Shuttle
+WIP
+All Stealthchanger shuttle designs need to have bushings installed in the corresponding hex-slot holes. Some people glue them in, but the intention is for them to be a near-pressfit. The specific bushings you'll want are (4mm?) oilless bearings. [insert link to adequate option here]
+
+There is a hole for an M3 heat set insert that can go into the bottom center of the shuttle along where the MGN rail shuttle connects - I have yet to see anyone use this hole for anything, so skip adding a heat set here. [picture]
+
+Below the above hole, there are two more holes for M3 heat set inserts. Those are to connect the X axis endstop prod in my design, but are absent in the original design. You will need to install heat sets there to use the X axis endstop prod.
+
+Next, you need 3 6x3mm neodymium magnets. The ones you want to get are N52 with a working temperature rating of 80c. N52 magnets are very strong variants of neodymium and 80c will put you far and beyond the temperature your magnets should ever hit. If you just buy a generic unlabelled pack of neodymium magnets, you will probably get N42s - not as strong, and usually max working temp rating of 60c. These can still work, but I like the strength and safety margins of the N52's, and it's worth a few more dollars for a lifetime supply.
+
+In my redesign of the shuttle, I extended the "fin" at the top so you can trim it only as low as is needed for the backplate to seat fully using some flush cutters. I suggest taking off 1mm of material from that fin at a time until you get the backplate almost fully seated to the shuttle, then file or sand down the rest until your backplate is fully there. The original design has this fin already designed to match up "perfectly" with the backplates - however, in my experience, stacking tolerances lead to that fin sometimes being just too short. 
+
+Finally, you'll notice that the side of the shuttle where the grooves for the 6mm 2GT X/Y axis belts probably printed really ugly. That's fine, realistically all we need here is some surface disruption to grip into the belts. On my redesign of the shuttle, just in front of those grooves, I have added some channels that you can use to slip excess length of the X/Y belts into - this helps get your belts tensioned properly by giving you somewhere to tug on them while preventing you from cutting your belts too short in case something goes wrong and you need to switch back to your original setup temporarily in an emergency. You DO lose about 4mm of Y axis travel because of the needed additional thickness, so be aware of that. If you don't care about having this in a compact one-piece package, there are also belt tensioning guides in the Stealthchanger repo, but I find using additional tools for what should be a fairly simple install to be a bit too much.
+
+- To install the shuttle, you'll first of course need to fully disengage the X/Y idlers on your gantry to give us some available room for tensioning once the new shuttle is installed.
+- Remove the shuttle from your original toolhead. You should be stripping off everything so that your mounting surface is the four tips of the X/Y belts and the MGN12 shuttle.
+- Insert the belts into the shuttle in the correct orientation and wrap them back around and into the previously-mentioned channels.
+- Insert the 4x M3x8 SHCS screws used to mount the Stealthchanger shuttle on the MGN12 shuttle, but don't tighten them fully - you want to still be able to pull the belts through.
+- Pull on both sets of belts with roughly equal tension (the more accurate you are here, the easier tensioning will be). 
+- Once you are happy with the tension on the belts, screw the Stealthchanger shuttle down securely to the MGN12 shuttle.
+- Returning to the X/Y idlers, apply proper and equal tension to each belt. Use your favorite trick for tensioning Voron 2.4 X/Y belts, just primarily make sure that it's even and you aren't over-tightening them. This can always be fine-tuned down the line.
+
+
+# Preparing, Assembling, and Installing the Backplates
+WIP
+
 # Heat-Treating Process for Backplates
 
 I have seen this documented both in the Stealthchanger Discord server as well as in the Stealthchanger repo wiki. This is intended to improve the fitup between your backplates and the shuttle. The shuttle should already be installed on the gantry at this point. Here is the process I did:
@@ -110,11 +137,7 @@ I have seen this documented both in the Stealthchanger Discord server as well as
 This sounds a bit annoying, and it is - but this is how you get really accurate results with the OptoTAP in my experience.
 
 
-# - Preparing, Assembling, and Installing the Shuttle
-TBD
-
-
-# Assembly Notes
+# Other Assembly Notes
 - Ensure the X-axis dragchain is eliminated. Y-axis dragchain needs to remain in place for the X/Y endstop cable.
 - Ensure the Z axis dragchain allows the Z axis to move cleanly through its entire travel to the top. If it's getting caught on the guide stop mounted on the rear of the gantry, move the guide stop.
 - When installing the dock crossbar, try to get it as even and square to the frame as possible. You won't get it perfectly but we can adjust for sub-mm variances in the firmware later.
