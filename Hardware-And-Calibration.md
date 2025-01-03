@@ -25,7 +25,7 @@ Complete the following sections in order to replicate my process.
 You will need to install the following Klipper add-ons:
 - Klipper-Toolchanger: https://github.com/viesturz/klipper-toolchanger/
 
-This includes everything Klipper will need for the actual toolchanging routines, running multiple part fans, managing multiple probes, incorporates some path rounding logic for non-print moves (docking/undocking, ect) and some calibration utilities.
+This includes everything Klipper will need for the actual toolchanging routines, running multiple part fans, managing multiple probes, incorporates some path rounding logic for non-print moves (docking/undocking, ect) and some calibration utilities. You will need to edit some of these files: Check in the "Firmware" folder in this repo for comments pointing out where.
 
 Make sure Klipper is up-to-date before beginning, and if necessary, update Klipper on your Bird's Nest and your Nitehawk toolhead boards. Proper functionality apparently relies upon features updated/added to Klipper around July of 2024, so you need a version that's newer than that. When you buy the Bird's Nest from Isik and the Nitehawks from LDO, they _should_ already be on the latest release of Klipper when you receive them, but it's good to double-check.
 
