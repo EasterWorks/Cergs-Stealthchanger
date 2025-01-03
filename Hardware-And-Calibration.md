@@ -267,8 +267,8 @@ These offsets will entirely be done as gcode offset, particularly gcode_x_offset
 starting with T0, and then insert a filament change to T1 once it reaches 2mm tall. When finished, you should mark which side of the cube was facing you when you pulled it off
 of the bed to maintain the orientation.
 
-When finished, the two sections will most likely be offset by a small amount. I use a digital depth gauge to determine just how offset these are and note that for both axiis.
-Once noted, enter the information for your gcode_x_offset and gcode_y_offset values as mentioned above. Remember; positive values move TOWARD the axis' travel limit.
+When the print has completed, the two sections will most likely be offset by a small amount. I use a digital depth gauge to determine just how offset these are and note that for both axiis.
+Once noted, enter the information for your gcode_x_offset and gcode_y_offset values in the tool you're calibrating as mentioned above. Remember; positive values move TOWARD the axis' travel limit.
 
 
 # Final Considerations
