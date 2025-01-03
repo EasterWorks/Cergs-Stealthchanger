@@ -96,14 +96,14 @@ The third source is back with DraftShift for their modular docks, particularly t
 
 
 # - Preparing, Assembling, and Installing the Shuttle
-WIP
+WIP [need to add pictures and part links]
 All Stealthchanger shuttle designs need to have bushings installed in the corresponding hex-slot holes. Some people glue them in, but the intention is for them to be a near-pressfit. The specific bushings you'll want are (4mm?) oilless bearings. [insert link to adequate option here]
 
 There is a hole for an M3 heat set insert that can go into the bottom center of the shuttle along where the MGN rail shuttle connects - I have yet to see anyone use this hole for anything, so skip adding a heat set here. [picture]
 
 Below the above hole, there are two more holes for M3 heat set inserts. Those are to connect the X axis endstop prod in my design, but are absent in the original design. You will need to install heat sets there to use the X axis endstop prod.
 
-Next, you need 3 6x3mm neodymium magnets. The ones you want to get are N52 with a working temperature rating of 80c. N52 magnets are very strong variants of neodymium and 80c will put you far and beyond the temperature your magnets should ever hit. If you just buy a generic unlabelled pack of neodymium magnets, you will probably get N42s - not as strong, and usually max working temp rating of 60c. These can still work, but I like the strength and safety margins of the N52's, and it's worth a few more dollars for a lifetime supply.
+Next, you need 3 6x2mm neodymium magnets. The ones you want to get are N52 with a working temperature rating of 80c. N52 magnets are very strong variants of neodymium and 80c will put you far and beyond the temperature your magnets should ever hit. If you just buy a generic unlabelled pack of neodymium magnets, you will probably get N42s - not as strong, and usually max working temp rating of 60c. These can still work, but I like the strength and safety margins of the N52's, and it's worth a few more dollars for a lifetime supply.
 
 In my redesign of the shuttle, I extended the "fin" at the top so you can trim it only as low as is needed for the backplate to seat fully using some flush cutters. I suggest taking off 1mm of material from that fin at a time until you get the backplate almost fully seated to the shuttle, then file or sand down the rest until your backplate is fully there. The original design has this fin already designed to match up "perfectly" with the backplates - however, in my experience, stacking tolerances lead to that fin sometimes being just too short. 
 
@@ -119,7 +119,11 @@ Finally, you'll notice that the side of the shuttle where the grooves for the 6m
 
 
 # Preparing, Assembling, and Installing the Backplates
-WIP
+WIP [need to add pictures and part links]
+Each backplate will require one N52 6x2mm magnet, two M3x6 FHCS, two M3x8 SHCS, four M3 heat-set inserts, and three 4mm(?) dowel pins. Once you assemble all the parts, skip down to the next section (Heat-Treating Process for Backplates), then return here.
+
+After assembly and heat-treating, attach the backplate to the rear of the Stealthburner using the same screws that were previously used to secure it to the default Voron 2.4 shuttle design. Install the OptoTAP in its position on the rear of the backplate and verify fitup with the shuttle is still solid and snappy. If you notice your backplates are slightly tilted along the X axis, you can back out the two FHCS screws in the backplate to force its alignment with the shuttle. This isn't super commonly needed, but if your backplates didn't come out perfectly, you may experience slight tilting once the entire Stealthburner toolhead is loaded on the shuttle. Some advocate using a "paper test" to check screw alignment - get both screws roughly in the position you'd like and then try to shove a strip of generic A4 printer paper in between the magnet and screw. If both screws are adjusted equally, the paper won't slide under either of them.
+
 
 # Heat-Treating Process for Backplates
 
@@ -138,6 +142,7 @@ This sounds a bit annoying, and it is - but this is how you get really accurate 
 
 
 # Other Assembly Notes
+- In each Stealthburner you assemble, insert a 5x2mm magnet in front of the bottom two cowl screws. These will help secure the toolheads in their docks by magnetizing to the ends of the screws specified in the design documents for the dock parts linked above. Contrary to common opinion at the start, these DON'T get stuck in there forever - you can remove them just by magnetizing them to a piece of metal (ie. a machine screw head) from the outside and pulling them straight out.
 - Ensure the X-axis dragchain is eliminated. Y-axis dragchain needs to remain in place for the X/Y endstop cable.
 - Ensure the Z axis dragchain allows the Z axis to move cleanly through its entire travel to the top. If it's getting caught on the guide stop mounted on the rear of the gantry, move the guide stop.
 - When installing the dock crossbar, try to get it as even and square to the frame as possible. You won't get it perfectly but we can adjust for sub-mm variances in the firmware later.
@@ -162,17 +167,21 @@ Make sure your umbilical isn't too tight or too loose that it messes with your p
 Follow the typical Klipper Z offset calibration procedure on T0 EXCEPT for saving config after the calibration - simply note the offset as it is reported in the console:
 https://www.klipper3d.org/Probe_Calibrate.html#calibrating-probe-z-offset
 
-When T0 does its initial homing routine and bed mesh at the start of a print, its nozzle offset is applied to the gantry. Meaning if the T0 offset is, say, -1.23mm, that will 
+You do not need to calibrate the probe-to-nozzle offset for the other tools, you simply need to ensure all prints start with T0 loaded on the shuttle (manually if needed0.
+
+When the first tool loaded during a print does its initial homing routine and bed mesh at the start of a print, its nozzle offset is applied to the gantry. Meaning if the T0 is the first tool, and its offset is, say, -1.23mm, that will 
 be the offset applied for the gantry as it is in motion during the print.
 
-If T1 has a substantially different nozzle offset, say -0.23mm, this will result in the nozzle being shoved 1mm too far into the bed when T1 is switched to and begins printing. 
-This can lead to stacking tolerance problems when printing parts with embedded color changes (for example: a black circle on the side of a cube).
+If T1 has a substantially different nozzle offset, say -0.23mm, and you start a print with T1 loaded on the shuttle, this will cause the following problems:
+- Because all gcode offsets are calculated _against_ T0 and no other toolheads, your gcode offsets will be off.
+- Because T1 in this instance is not the tool you applied a probe-to-nozzle offset to, its offset will be incorrect and this will proliferate to all other toolheads during the print. This may damage the bed and/or nozzle and/or toolhead.
+- This WILL also lead to stacking tolerance problems when printing parts with embedded color changes (for example: a black circle on the side of a white cube).
 
-Because of this, you need to account for that difference in the gcode offset. In this specific example, your gcode Z offset would be 1.
+Because of this, you need to compare the nozzle offsets of all tools against T0 and account for those differences in the gcode offset. In the specific example above, your gcode Z offset on T1 would be 1.
 
-Note: Gcode offsets in positive values move the toolhead toward the "max" position of that axis to compensate. Negative offsets go toward the "min" position.
+Note: Gcode offsets in positive values move the toolhead toward the "max" position of that axis to compensate, while offsets go toward the "min" position. This is in contrast to the normal probe-to-nozzle Z offset, where lower numbers INCREASE the offset.
 
-In your toolhead config, set the real nozzle offset (the result you get in the console after finishing the PROBE_CALIBRATE procedure) as the z_offset value under [tool_probe tool#]. Ideally, do a test print with that value on that tool to verify that your first layer is good. When you have determined the needed gcode offset per the above information, set that as the gcode_z_offset value under [tool tool#].
+In your toolhead config, set the real nozzle offset (the result you get in the console after finishing the PROBE_CALIBRATE procedure) as the z_offset value under [tool_probe tool0]. Ideally, do a test print with that value on that tool to verify that your first layer is good. When you have determined your needed gcode offsets for Z, set that as the gcode_z_offset value under [tool tool#]. More info about calibrating your X/Y offsets in section "Nozzle Gcode Offsets - X/Y Offset".
 
 ### Note: When you do your nozzle offset calibration, before saving config and restarting firmware, check the bottom of printer.cfg to see if it's going to try to insert new nozzle offset parameters. DELETE THIS before saving config and restarting firmware. These params need to be updated per toolhead, NOT in printer.cfg!
 
@@ -252,7 +261,7 @@ This will prevent Orca Slicer from inserting its default filament change gcode. 
 If you are utilizing an existing Stealthburner LED configurations, make sure to insert the right gcode macros where needed in TOOLCHANGER_PRINT_START and TOOLCHANGER_PRINT_END.
 
 
-# Nozzle Offsets - X/Y Offset
+# Nozzle Gcode Offsets - X/Y Offset
 
 These offsets will entirely be done as gcode offset, particularly gcode_x_offset and gcode_y_offset values under [tool tool#]. My typical approach is to slice a 20mmx4mm cube,
 starting with T0, and then insert a filament change to T1 once it reaches 2mm tall. When finished, you should mark which side of the cube was facing you when you pulled it off
