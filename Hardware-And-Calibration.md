@@ -1,10 +1,13 @@
+This page is a WIP.
+
 ## HOW DO I STEALTHCHANGER?
 Complete the following sections in order to replicate my process.
 
 # Table of Contents
 - Add-Ons and Updates for Klipper
-- Toolhead Print Selection
+- Printed Part Selection
 - Heat-Treating Process for Backplates
+- Preparing, Assembling, and Installing the Shuttle 
 - Assembly Notes
 - Special Notes on OptoTAP
 - Nozzle Offsets - Probe-to-Nozzle and Gcode
@@ -26,7 +29,7 @@ This includes everything Klipper will need for the actual toolchanging routines,
 Make sure Klipper is up-to-date before beginning, and if necessary, update Klipper on your Bird's Nest and your Nitehawk toolhead boards. Proper functionality apparently relies upon features updated/added to Klipper around July of 2024, so you need a version that's newer than that. When you buy the Bird's Nest from Isik and the Nitehawks from LDO, they _should_ already be on the latest release of Klipper when you receive them, but it's good to double-check.
 
 
-# Toolhead Print Selection
+# Printed Part Selection
 
 As this repo is targeted toward people wanting to use the Stealthburner toolhead, we'll first talk about that.
 
@@ -105,6 +108,10 @@ I have seen this documented both in the Stealthchanger Discord server as well as
 - Repeat for each backplate.
 
 This sounds a bit annoying, and it is - but this is how you get really accurate results with the OptoTAP in my experience.
+
+
+# - Preparing, Assembling, and Installing the Shuttle
+TBD
 
 
 # Assembly Notes
