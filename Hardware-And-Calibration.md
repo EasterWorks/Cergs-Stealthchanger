@@ -81,7 +81,7 @@ Next up, your umbilical clips. These are largely up to you - I designed ones tha
 I use four per umbilical.
 
 
-### Bird's Nest fannypack and Exhaust Plate
+### Bird's Nest fannypack
 ![image](https://github.com/user-attachments/assets/c48290af-dd03-4322-92ac-a3fa0aaf14c0)
 
 Now let's look at making a home for the Bird's Nest and a new exhaust plate to allow the umbilicals into the print chamber. For housing the Bird's Nest, print the fanny pack by Isiks Tech (or another enclosure if you prefer - the fanny pack isn't very space efficient):
@@ -89,6 +89,7 @@ Now let's look at making a home for the Bird's Nest and a new exhaust plate to a
 
 I used 3M double-sided tape to stick it to the back panel a few inches under the exhaust plate.
 
+### Exhaust Plate / Umbilical Guide
 ![image](https://github.com/user-attachments/assets/ddef0ad0-37c9-4702-b937-171afb3ba4eb)
 
 Now for the exhaust plate itself - I designed one that would allow you to non-destrucitvely insert and retain the umbilicals. You can find it here on Printables:
