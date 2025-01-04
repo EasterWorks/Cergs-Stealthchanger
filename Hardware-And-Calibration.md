@@ -53,16 +53,22 @@ Next you'll need both the Stealthburner backplates and a shuttle. Here are the b
 As for the shuttle, I have modified DSD's design to allow you to loop the belts back into and out of the housing to prevent cutting the belts too short. It can be found in this repo:
 - https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/STLs/MGN12%20Shuttle.stl
 
-YOU WILL NOTICE the "fin" on top of the shuttle is too long for the backplate to sit properly. Leave it this way until the shuttle is installed and you have a backplate outfitted with pins. CAREFULLY trim the fin on top of the shuttle until whichever backplate is going on your T0 sits as flat to the shuttle as it's going to (force it if needed - poor fitup will be adjusted later). I found the default height of the fin to be too short.
+Of course you may also use the DSD version of the shuttle without those channels to minimize Y axis travel loss, though routing the belts will be more difficult:
+- https://github.com/DraftShift/StealthChanger/blob/main/STLs/Shuttle%20MGN12%20(With%20belt%20grooves).stl
+
+DSD also provides a version of the shuttle without the grooves if you prefer that.
+
+YOU WILL NOTICE the "fin" on top of my shuttle redesign is too long for the backplate to sit properly with both parts straight off of the printer. Leave it this way until the shuttle is installed and you have a backplate outfitted with pins. CAREFULLY trim the fin on top of the shuttle until whichever backplate is going on your T0 sits as flat to the shuttle as it's going to (force it if needed - poor fitup will be adjusted later). I found the default height of the fin to be too short.
 
 It is also worth noting that this will move your Y axis about 5mm toward the "front" of the printer. You may need to adjust how your bed is positioned to accomodate.
 
-You need one backplate per toolhead and only one shuttle.
+You also need one backplate per toolhead and only one shuttle. Those can be found on DSD's repo. The link below is for the Stealthburner, but they support many toolheads and the list is growing:
+- https://github.com/DraftShift/StealthChanger/blob/main/STLs/Backplates/StealthBurner.stl
 
-Additionally, you will need to print the X axis prod included in this repo:
+Additionally, since we're going to use the X axis endstop on the X/Y intersection joint, you will need to print the X axis prod included in this repo:
 - https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/STLs/x-axis-prod.stl
 
-The X axis prod is secured to the bottom of the shuttle using two M3x8 SHCS. Its job is to touch the X axis endstop when it reaches its minimum distance. This isn't accounted for in the original shuttle design as the intention is to use sensorless homing on X/Y, but we aren't doing that.
+The X axis prod is secured to the bottom of the shuttle using two M3x8 SHCS that screw into two M3 hot-sets you'll need to embed into either shuttle design in the provided holes. Its job is to touch the X axis endstop when it reaches its maximum travel. This isn't accounted for in either of the presented shuttle designs as the original intention was to use sensorless homing on X/Y.
 
 
 ### PG7 gland mount for Stealthburner
