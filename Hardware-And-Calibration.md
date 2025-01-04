@@ -45,6 +45,8 @@ The reason for using an ECAS fitting is because the reverse bowden tubes will be
 
 
 ### Backplates and Shuttles
+![image](https://github.com/user-attachments/assets/18141c80-02cf-48d9-a749-e7e6a0d2e9f5)
+
 Next you'll need both the Stealthburner backplates and a shuttle. Here are the backplates from the DraftShift Design repo:
 - https://github.com/DraftShift/StealthChanger/blob/main/STLs/Backplates/StealthBurner.stl
 
@@ -64,11 +66,15 @@ The X axis prod is secured to the bottom of the shuttle using two M3x8 SHCS. Its
 
 
 ### PG7 gland mount for Stealthburner
+![image](https://github.com/user-attachments/assets/3bd0a084-98f6-4e07-a211-87b29cfe814f)
+
 Last part for the toolhead itself - you'll want a PG7 gland mount on the Stealthburners to replace the original X axis dragchain mount. I use this one by CstmCreations_174350 on Printables:
 - https://www.printables.com/model/463220-voron-cw2-stealthburner-ebb-sb2240-pg7-umbilical-m
 
 
 ### Umbilical clips
+![image](https://github.com/user-attachments/assets/2dbc249b-14ea-437f-8b84-088906a17283)
+
 Next up, your umbilical clips. These are largely up to you - I designed ones that would slip over the Nitehawk USB cable, allow a channel for the reverse bowden tube, and use two small zipties to create just enough tension to grip on to the cable and bowden without crushing them. It also has holes to allow for 1mm piano wire as the stiffening component of the umbilical. You can find them here:
 - https://www.printables.com/model/1127631-ldo-nitehawk-umbilical-clips-for-stealthchanger-ta
 
@@ -76,10 +82,14 @@ I use four per umbilical.
 
 
 ### Bird's Nest fannypack and Exhaust Plate
-Now let's look at making a home for the Bird's Nest and a new exhaust plate to allow the umbilicals into the print chamber. For housing the Bird's Nest, print the fanny pack by Isiks Tech:
+![image](https://github.com/user-attachments/assets/c48290af-dd03-4322-92ac-a3fa0aaf14c0)
+
+Now let's look at making a home for the Bird's Nest and a new exhaust plate to allow the umbilicals into the print chamber. For housing the Bird's Nest, print the fanny pack by Isiks Tech (or another enclosure if you prefer - the fanny pack isn't very space efficient):
 - https://github.com/xbst/Birds-Nest/tree/master/Mounts/V2
 
 I used 3M double-sided tape to stick it to the back panel a few inches under the exhaust plate.
+
+![image](https://github.com/user-attachments/assets/ddef0ad0-37c9-4702-b937-171afb3ba4eb)
 
 Now for the exhaust plate itself - I designed one that would allow you to non-destrucitvely insert and retain the umbilicals. You can find it here on Printables:
 - https://www.printables.com/model/1127639-ldo-nitehawk-umbilical-exhaust-plate-for-voron-24
