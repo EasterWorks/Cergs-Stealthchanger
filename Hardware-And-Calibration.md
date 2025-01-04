@@ -5,6 +5,7 @@ Complete the following sections in order to replicate my process.
 
 # Table of Contents
 - Add-Ons and Updates for Klipper
+- Bill of Materials
 - Printed Part Selection
 - Preparing, Assembling, and Installing the Shuttle
 - Preparing, Assembling, and Installing the Backplates
@@ -28,6 +29,32 @@ You will need to install the following Klipper add-ons:
 This includes everything Klipper will need for the actual toolchanging routines, running multiple part fans, managing multiple probes, incorporates some path rounding logic for non-print moves (docking/undocking, ect) and some calibration utilities. You will need to edit some of these files: Check in the "Firmware" folder in this repo for comments pointing out where.
 
 Make sure Klipper is up-to-date before beginning, and if necessary, update Klipper on your Bird's Nest and your Nitehawk toolhead boards. Proper functionality apparently relies upon features updated/added to Klipper around July of 2024, so you need a version that's newer than that. When you buy the Bird's Nest from Isik and the Nitehawks from LDO, they _should_ already be on the latest release of Klipper when you receive them, but it's good to double-check.
+
+
+# Bill of Materials
+
+Remember that this repo is centered around the concept of implementing the Stealthchanger with two Stealthburner+Revo toolheads using LDO Nitehawk-SB toolhead boards and an Isiks Tech Birds' Nest for toolhead networking. If you are using CAN or different toolhead designs, this won't be entirely accurate.
+
+### Stealthburner:
+- [LDO Nitehawk-SB](https://west3d.com/products/nitehawk-stealthburner-toolboard-sb-pcb-by-ldo-motors) (one per toolhead) 
+- [E3D Revo hotend](https://www.filastruder.com/products/e3d-revo-voron?variant=39567818981447) (one per toolhead)
+- All other commercial parts needed for the Stealthburner can be found [here](https://vorondesign.com/voron_stealthburner), with the exception of the Cables and Optional - ADXL345 Sensor sections.
+
+The main difference between the standard Stealthburner and the Stealthchanger adaptation is that instead of putting heat sets and screws into the original Voron 2.4 shuttle, you'll instead be putting those parts into the backplates.
+
+### Shuttle
+- 6x3mm N52 neodymium magnet (x3)
+- 4x6x6mm oilless sleeve bushing (x3)
+- M3x8 SHCS (x4)
+- M3x5x4mm heat-set inserts (x2)
+
+### Backplate (each):
+- 6x3mm N52 neodymium magnet (x1)
+- M3x6 FHCS (x2)
+- M3x6 BHCS (x2 - may also use M3x8, just screw them in slowly)
+- M3x8 SHCS (2x)
+- M4x12mm round-head dowel pins (x3)
+- M3x5x4mm heat-set inserts (4x)
 
 
 # Printed Part Selection
