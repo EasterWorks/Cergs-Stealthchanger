@@ -2,7 +2,7 @@
 
 
 ### shuttle_redesign.stl:
-This is a replacement for the shuttle in the Stealthchanger repo that adds channels for excess belt pathing. The intention is that you will thread your belts around the "corner" and into the available channels as far as possible, then trim anything that sticks out of the sides. This both helps install the shuttle without juggling the belts and using strange methods to hold the belts in place and allows for the advisable retention of extra belt length just in case. Actual amount of Y axis travel loss TBD.
+This is a replacement for the shuttle in the Stealthchanger repo that adds channels for excess belt pathing. The intention is that you will thread your belts around the "corner" and into the available channels as far as possible, then trim anything that sticks out of the sides. This both helps install the shuttle without juggling the belts and using strange methods to hold the belts in place and allows for the advisable retention of extra belt length just in case. The two holes for M3 heat set inserts on the bottom have had their positions changed so they don't print as squished as the originals. Actual amount of Y axis travel loss is around 4-5mm depending on your setup.
 
 ### zero_clearance_supports.stl
 This is an **OPTIONAL** part for printing the shuttle with a pre-made zero-clearance support structure. It SHOULD work with the original DSD shuttle design, but I haven't tested it with that yet. This is intended for you to use _after_ you already have your Stealthchanger assembled in the event you'd like to use a higher quality material, or simply to get a """"better""" shuttle print, but you could feasibly do it with manual filament changes if you're okay with sitting there watching for 64 tool changes. 
@@ -17,4 +17,4 @@ Print settings:
 - **NOTE**: This is **NOT NECESSARY** for a functioning shuttle! Some people can't resist the urge to print it with a super clean rear face, and some people might want to sell printed parts kits that look visually stunning all around - this will do it. 
 
 ### x-axis-prod.stl
-Both the default shuttle and my above redesign won't have sufficient width to hit the X axis limit switch without crashing into the gantry. This is a small plate that screws into the bottom of the above shuttle with two M3x8 SHCS screws and sticks out just enough to hit the trigger before the gantry crashes. Actual amount of X axis travel loss TBD.
+Both the default shuttle and my above redesign won't have sufficient width to hit the X axis limit switch without crashing into the gantry. This is a small plate that screws into the bottom of the above shuttle with two M3x8 SHCS screws and sticks out just enough to hit the trigger before the gantry crashes. NOT compatible with the DSD shuttle design due to different hole placement intended for better printing.
