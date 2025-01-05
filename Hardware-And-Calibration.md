@@ -92,7 +92,7 @@ Next you'll need both the Stealthburner backplates and a shuttle. Here are the b
 As for the shuttle, I have modified DSD's design to allow you to loop the belts back into and out of the housing to prevent cutting the belts too short. It can be found in this repo:
 - https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/STLs/MGN12%20Shuttle.stl
 
-Of course you may also use the DSD version of the shuttle without those channels to minimize Y axis travel loss, though routing the belts will be more difficult:
+Of course you may also use the DSD version of the shuttle without those channels to minimize Y axis travel loss, though routing the belts will be more difficult **and my X axis endstop prod will NOT work with their design**:
 - https://github.com/DraftShift/StealthChanger/blob/main/STLs/Shuttle%20MGN12%20(With%20belt%20grooves).stl
 
 DSD also provides a version of the shuttle without the grooves if you prefer that.
