@@ -224,7 +224,7 @@ There are several options for this. Probably the easiest option is going to be p
 
 For my tophat, I simply cut some extrusions to the same dimensions as the top loop of 2020 extrusions on my frame, added vertical struts to make it stand about 8" taller than the top of the frame, assembled them with internal corner brackets, printed some of the default Voron panel clips, and purchased some correctly-sized acrylic panels to cover the tophat frame. Then I mounted it internally to the printer's frame with some printed parallel 2020 mounting plates, which you can find many options for online.
 
-There are many other tophat designs out there as well, including ones with printed frames and acrylic panels if you prefer see-through panels. Do some research; ultimately it's up to you. Some people even use a cardboard box. Some _crazy_ people.
+There are many other tophat designs out there as well, including ones with printed frames and acrylic panels if you prefer see-through panels but don't want to deal with the 2020 extrusions. Do some research; ultimately it's up to you. Some people even use a cardboard box. Some _crazy_ people.
 
 
 # The Dock Crossbar and Bulking Out the Front of the Printer (not in the BOM!)
