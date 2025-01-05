@@ -14,7 +14,7 @@ Print settings:
 - Use the normal 4 walls, 5 tops/bottoms, and 40% infill recommended for the project.
 - For the support structure, ensure all top surfaces are ironed.
 - Increase your PLA build plate temperature to match the build plate temperature of the material you're using for the shuttle.
-- **NOTE**: This is **NOT NECESSARY** for a functioning shuttle! Some people can't resist the urge to print it with a super clean backplate, and some people might want to sell printed parts kits that look visually stunning all around - this will do it. 
+- **NOTE**: This is **NOT NECESSARY** for a functioning shuttle! Some people can't resist the urge to print it with a super clean rear face, and some people might want to sell printed parts kits that look visually stunning all around - this will do it. 
 
 ### x-axis-prod.stl
 Both the default shuttle and my above redesign won't have sufficient width to hit the X axis limit switch without crashing into the gantry. This is a small plate that screws into the bottom of the above shuttle with two M3x8 SHCS screws and sticks out just enough to hit the trigger before the gantry crashes. Actual amount of X axis travel loss TBD.
