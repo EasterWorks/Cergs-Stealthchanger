@@ -16,7 +16,7 @@ Complete the following sections in order to replicate my process.
 - [Printed Part Selection](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#printed-part-selection)
 - [Preparing, Assembling, and Installing the Shuttle](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#preparing-assembling-and-installing-the-shuttle)
 - [Preparing, Assembling, and Installing the Backplates](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#preparing-assembling-and-installing-the-backplates)
-- [Preparing, Assembling, and Installing the Tophat](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#preparing-assembling-and-installing-the-tophat)
+- [Preparing, Assembling, and Installing the Tophat (not in the BOM!)](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#preparing-assembling-and-installing-the-tophat-not-in-the-bom)
 - [Heat-Treating Process for Backplates](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#heat-treating-process-for-backplates)
 - [The Dock Crossbar and Bulking Out the Front of the Printer (not in the BOM!)](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#the-dock-crossbar-and-bulking-out-the-front-of-the-printer-not-in-the-bom)
 - [Other Assembly Notes](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#other-assembly-notes)
@@ -215,7 +215,7 @@ I have seen this documented both in the Stealthchanger Discord server by several
 This sounds a bit annoying, and it is - but this is how you get really accurate results with the OptoTAP in my experience.
 
 
-# Preparing, Assembling, and Installing the Tophat
+# Preparing, Assembling, and Installing the Tophat (not in the BOM!)
 
 In addition to the shuttle, backplates, fanny pack, and docks, you'll need a tophat if you intend to print ABS/ASA and other high temp materials.
 
