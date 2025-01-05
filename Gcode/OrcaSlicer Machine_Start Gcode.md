@@ -15,3 +15,5 @@ M104 S{first_layer_temperature[next_extruder]} T[next_extruder]
 T[next_extruder]
 M109 S{first_layer_temperature[next_extruder]} T[next_extruder]
 ```
+
+This forces Klipper to send the command to get the next tool up to heat before the toolchange, and to wait for the tool to get up to temp before picking it up. After the first layer, the preheating gcode commands from the slicer will kick in (you configured those, right???) - these commands will still go through, but they'll get processed quickly since the next tool should already be hot at this point. **NOTE THAT** this gcode is calling "first_layer_temperature[next_extruder]". This means it's grabbing the first layer temp from your filament settings, not the "other layers" temperature. I'm working to find a workaround for this that will use logic statements to decide if the next tool is working on layer 1 or any layer beyond that, and apply the correct temperature if possible. I will update this document once I've figured that out :-)
