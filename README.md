@@ -40,6 +40,7 @@ DraftShift Design, "StealthChanger"
 https://github.com/DraftShift/StealthChanger  
 
 DraftShift Design & Viesturz "klipper-toolchanger"  
+https://github.com/viesturz/klipper-toolchanger (use this one until DraftShift greenlights their version for public use!)
 https://github.com/DraftShift/klipper-toolchanger  
 
 Thiessen with DraftShift Design for being INCREDIBLY helpful and patient with helping the community find answers when needed.
