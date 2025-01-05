@@ -17,8 +17,8 @@ Complete the following sections in order to replicate my process.
 - [Preparing, Assembling, and Installing the Shuttle](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#preparing-assembling-and-installing-the-shuttle)
 - [Preparing, Assembling, and Installing the Backplates](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#preparing-assembling-and-installing-the-backplates)
 - [Preparing, Assembling, and Installing the Tophat (not in the BOM!)](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#preparing-assembling-and-installing-the-tophat-not-in-the-bom)
-- [Heat-Treating Process for Backplates](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#heat-treating-process-for-backplates)
 - [The Dock Crossbar and Bulking Out the Front of the Printer (not in the BOM!)](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#the-dock-crossbar-and-bulking-out-the-front-of-the-printer-not-in-the-bom)
+- [Heat-Treating Process for Backplates](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#heat-treating-process-for-backplates)
 - [Other Assembly Notes](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#other-assembly-notes)
 - [Special Notes on OptoTAP](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#special-notes-on-optotap)
 - [Running Your Umbilical Cables](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#running-your-umbilical-cables)
@@ -198,22 +198,6 @@ Each backplate will require one N52 6x2mm magnet, two M3x6 FHCS, two M3x8 SHCS, 
 
 After assembly and heat-treating, attach the backplate to the rear of the Stealthburner using the same screws that were previously used to secure it to the default Voron 2.4 shuttle design. Install the OptoTAP in its position on the rear of the backplate and verify fitup with the shuttle is still solid and snappy. If you notice your backplates are slightly tilted along the X axis, you can back out the two FHCS screws in the backplate to force its alignment with the shuttle, or re-do the heat treating process until the fitup is better. This isn't super commonly needed, but if your backplates didn't come out perfectly, you may experience slight tilting once the entire Stealthburner toolhead is loaded on the shuttle. Some advocate using a "paper test" to check screw alignment - get both screws roughly in the position you'd like and then try to shove a strip of generic A4 printer paper in between the magnet and screw. If both screws are adjusted equally, the paper shouldn't slide under either of them.
 
-# Heat-Treating Process for Backplates
-
-I have seen this documented both in the Stealthchanger Discord server by several people as well as in the Stealthchanger repo wiki. This is intended to improve the fitup between your backplates and the shuttle. The shuttle should already be installed on the gantry at this point. Here is the process I did:
-
-- Install pins in the backplates.
-- Place ONE backplate on the bed on its flat face, set bed temperature to 110c, and close the door.
-- Wait around one hour. To check if it's been long enough, touch the metal pins - they should be hot.
-- Turn off the bed heater and open the enclosure door.
-- While still hot, install the backplate on the shuttle firmly. If it tries to lift itself, secure it only as much as is needed for it to seat properly with a ziptie.
-- Close the enclosure door (we want to let the heat in the chamber SLOWLY drop).
-- Allow this to sit for 4-5 hours or until the backplate is entirely cool to the touch.
-- Once cooled, remove/insert the backplate into the shuttle a few times to see how fitup feels. If it's still bad, repeat. If it's still bad after repeating, you may need to reprint the backplate or shuttle.
-- Repeat for each backplate.
-
-This sounds a bit annoying, and it is - but this is how you get really accurate results with the OptoTAP in my experience.
-
 
 # Preparing, Assembling, and Installing the Tophat (not in the BOM!)
 
@@ -243,6 +227,21 @@ The third option here is to build what's called the Liftbar. I have no expertise
 - https://github.com/viesturz/tapchanger/blob/main/Dock/Liftbar/Liftbar.md
 
 
+# Heat-Treating Process for Backplates
+
+I have seen this documented both in the Stealthchanger Discord server by several people as well as in the Stealthchanger repo wiki. This is intended to improve the fitup between your backplates and the shuttle. The shuttle should already be installed on the gantry at this point. Here is the process I did:
+
+- Install pins in the backplates.
+- Place ONE backplate on the bed on its flat face, set bed temperature to 110c, and close the door.
+- Wait around one hour. To check if it's been long enough, touch the metal pins - they should be hot.
+- Turn off the bed heater and open the enclosure door.
+- While still hot, install the backplate on the shuttle firmly. If it tries to lift itself, secure it only as much as is needed for it to seat properly with a ziptie.
+- Close the enclosure door (we want to let the heat in the chamber SLOWLY drop).
+- Allow this to sit for 4-5 hours or until the backplate is entirely cool to the touch.
+- Once cooled, remove/insert the backplate into the shuttle a few times to see how fitup feels. If it's still bad, repeat. If it's still bad after repeating, you may need to reprint the backplate or shuttle.
+- Repeat for each backplate.
+
+This sounds a bit annoying, and it is - but this is how you get really accurate results with the OptoTAP in my experience.
 # Other Assembly Notes
 - In each Stealthburner you assemble, insert a 5x2mm magnet in front of the bottom two cowl screws. These will help secure the toolheads in their docks by magnetizing to the ends of the screws specified in the design documents for the dock parts linked above. Contrary to common opinion at the start, these DON'T get stuck in there forever - you can remove them just by magnetizing them to a piece of metal (ie. a machine screw head) from the outside and pulling them straight out. You may need to adjust the two M3x8 screws that get installed in the front of the dock to ensure they just kiss the magnets when the toolhead is fully docked - if they aren't long enough, that's weird, but you can substitute the M3x8's for a longer screw if needed.
 - Ensure the X-axis dragchain is eliminated. Y-axis dragchain needs to remain in place for the X/Y endstop cable. All toolhead cabling is handled by the Nitehawk umbilical.
