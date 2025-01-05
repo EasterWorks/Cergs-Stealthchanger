@@ -24,7 +24,7 @@ Complete the following sections in order to replicate my process.
 - [PID, Input Shaper, Extruder Rotation Distance, and Pressure Advance Tuning](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#pid-input-shaper-extruder-rotation-distance-and-pressure-advance-tuning)
 - [Dock Parking Calibration, Testing, and Safe Zone Specification](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#dock-parking-calibration-testing-and-safe-zone-specification)
 - [Purge, Preheat, and Other Relevant OrcaSlicer Settings](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#purge-preheat-and-other-relevant-orcaslicer-settings) 
-- [Machine Start and Machine End Gcode](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#machine-start-and-machine-end-gcode) 
+- [Machine Start, Change Filament and Machine End Gcode](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#machine-start-change-filament-and-machine-end-gcode) 
 - [Nozzle Offsets - X/Y Offset](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#nozzle-offsets---x-y-offset) 
 - [Final Considerations](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#final-considerations) 
 
