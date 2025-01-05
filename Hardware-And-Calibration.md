@@ -11,7 +11,7 @@ This page is a WIP kinda but should be full of hopefully helpful information.
 Complete the following sections in order to replicate my process.
 
 # Table of Contents
-- Add-Ons and Updates for Klipper
+- [Add-Ons and Updates for Klipper](https://github.com/EasterWorks/Cergs-Stealthchanger/edit/main/Hardware-And-Calibration.md#add-ons-and-updates-for-klipper)
 - Bill of Materials
 - Printed Part Selection
 - Preparing, Assembling, and Installing the Shuttle
