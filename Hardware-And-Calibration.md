@@ -155,7 +155,7 @@ Finally, back in DSD's repo, you'll need a Stealthburner dock backplate:
 - https://github.com/DraftShift/ModularDock/blob/main/STLs/Stealthburner/Back.stl
 
 
-# - Preparing, Assembling, and Installing the Shuttle
+# Preparing, Assembling, and Installing the Shuttle
 All Stealthchanger shuttle designs need to have bushings installed in the corresponding hex-slot holes. Some people glue them in, but the intention is for them to be a near-pressfit. You can find details on the specific bushings in the Bill of Materials section above.
 
 There is a hole for an M3 heat set insert that can go into the bottom center of the shuttle along where the MGN rail shuttle connects - I have yet to see anyone use this hole for anything, so skip adding a heat set there
