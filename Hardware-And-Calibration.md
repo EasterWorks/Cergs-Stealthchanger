@@ -330,15 +330,15 @@ Finally, and this is more of a quality of life note - your print should always s
 # Machine Start and Machine End Gcode
 
 I have supplied the needed start and end print gcodes in the Gcode folder for Orca Slicer, as Orca Slicer currently has the friendliest functionality and most up to date features in my opinion:
-- Machine start: https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Gcode/OrcaSlicer%20Start%20Gcode
-- Machine end: https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Gcode/Orca%20Slicer%20end%20gcode
+- Machine start: https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Gcode/OrcaSlicer%20Machine_Start%20Gcode
+- Machine end: https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Gcode/OrcaSlicer%20Machine_End%20gcode
 
 These will work with the other example CFG's I've provided here. The only special consideration is that, in order to differentiate toolchange starts/ends from non-toolchanger starts/ends, I have renamed the toolchanger print start and print end gcodes both in toolchanger.cfg and in the print start/end gcodes that need to be input to Orca Slicer. 
 
-Otherwise, make sure the Change Filament Gcode field has the following comment:
+Otherwise, if you're just going to use the Stealchanger/Tapchanger defaults, make sure the Change Filament Gcode field has the following comment:
 - ;Leave blank
 
-This will prevent Orca Slicer from inserting its default filament change gcode. No other gcode settings are needed in Orca Slicer other than our start and end print gcode.
+This will prevent Orca Slicer from inserting its default filament change gcode. No other gcode settings are needed in Orca Slicer other than our start and end print gcode, unless you want to use my Change Filament Gcode.
 
 If you are utilizing an existing Stealthburner LED configurations, make sure to insert the right gcode macros where needed in TOOLCHANGER_PRINT_START and TOOLCHANGER_PRINT_END.
 
