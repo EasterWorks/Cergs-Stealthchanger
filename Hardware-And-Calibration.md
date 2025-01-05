@@ -280,7 +280,8 @@ The only difference here is that instead of inputting these values to printer.cf
 
 For setting up your dock positions:
 - First, attach the tool you want to calibrate to the shuttle by hand, then home all axiis and QGL.
-- Once finished, manually jog the toolhead to the point where it's sitting where you would like it to dock. Do this slowly and carefully!
+- Once finished, manually jog the toolhead to the point where it's sitting where you would like it to dock. Do this slowly and carefully, and start on the Z axis so you don't accidentally crash into your docks!
+- Note that you MIGHT need to decrease your Y axis' minimum travel. I had to decrease the minimum travel to -10.
 - Finally, you're going to lower the Z axis until the OptoTAP untriggers, then move it up 1mm.
 - Document all axis positions and move the toolhead away.
 - Update the fields "params_park_x", "params_park_y", and "params_park_z" in your toolhead's configuration file under the section "[tool tool#]".
