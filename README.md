@@ -22,6 +22,11 @@ This repo is under construction. The top line of this readme document says "Repo
 If you have any questions about necessary plugins or part designs, please reach out to the original creators (whom will be listed and credited when their content is used). I also HIGHLY recommend joining the public Stealthchanger Discord channel, link here: https://discord.gg/kXuEYBsa
 
 
+## Mile-High Overview of the Stealthchanger
+
+This is a shorter document than the Hardware and Configuration document which is going to cover the basic concepts as a toe-dip. I'm writing it right now :D
+
+
 ## How to Stealthchanger
 
 I have created a guide in this repo that covers all the steps I took from day 1 to fully-functional. You can find it here: https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md
