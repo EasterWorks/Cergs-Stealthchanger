@@ -24,7 +24,7 @@ If you have any questions about necessary plugins or part designs, please reach 
 
 ## Mile-High Overview of the Stealthchanger
 
-[This](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/mile-high-overview-of-the-stealthchanger.md) is a shorter document than the Hardware and Configuration document which is going to cover the basic concepts as a toe-dip. 
+[This](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/mile-high-overview-of-the-stealthchanger.md) is a shorter document than the Hardware and Calibration document which is going to cover the basic concepts as a toe-dip. 
 
 
 ## How to Stealthchanger
