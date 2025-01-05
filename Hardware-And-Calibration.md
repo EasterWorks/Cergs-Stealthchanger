@@ -122,7 +122,7 @@ You also need one backplate per toolhead and only one shuttle. Those can be foun
 Additionally, since we're going to use the X axis endstop on the X/Y intersection joint, you will need to print the X axis prod included in this repo:
 - https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/STLs/x-axis-prod.stl
 
-The X axis prod is secured to the bottom of the shuttle using two M3x8 SHCS that screw into two M3 hot-sets you'll need to embed into either shuttle design in the provided holes. Its job is to touch the X axis endstop when it reaches its maximum travel. This isn't accounted for in either of the presented shuttle designs as the original intention was to use sensorless homing on X/Y.
+The X axis prod is secured to the bottom of the shuttle using two M3x8 SHCS that screw into two M3 hot-sets you'll need to embed into either shuttle design in the provided holes. Its job is to touch the X axis endstop when it reaches its maximum travel. DSD has provided endstop triggers which serve a similar purpose to their design and can be found in their repo - I didn't realize this initially, hence designing my own, but I do also prefer the design I came up with, so I'm leaving it here. Use whichever one works best for you.
 
 
 ### PG7 gland mount for Stealthburner
@@ -173,7 +173,7 @@ Finally, back in DSD's repo, you'll need a Stealthburner dock backplate:
 # Preparing, Assembling, and Installing the Shuttle
 All Stealthchanger shuttle designs need to have bushings installed in the corresponding hex-slot holes. Some people glue them in, but the intention is for them to be a near-pressfit. You can find details on the specific bushings in the Bill of Materials section above.
 
-There is a hole for an M3 heat set insert that can go into the bottom center of the shuttle along where the MGN rail shuttle connects - I have yet to see anyone use this hole for anything, so skip adding a heat set there
+There is a hole for an M3 heat set insert that can go into the bottom center of the shuttle along where the MGN rail shuttle connects - this hole is meant as a securing point for DSD's endstop trigger design. If you're using my shuttle and X-axis prod, you don't need to put a heat set there.
 
 Below the above-mentioned hole, there are two more holes for M3 heat set inserts. Those are to connect the X axis endstop prod in my design, but are absent in the original design. To use the prod, you will also need to print my redesigned shuttle, then secure it to the shuttle with two M3x8 SHCS.
 
