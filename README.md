@@ -34,14 +34,14 @@ I have created a guide in this repo that covers all the steps I took from day 1 
 
 ## Credits:  
 Viesturz, "tapchanger"  
-https://github.com/viesturz/tapchanger  
+-https://github.com/viesturz/tapchanger  
 
 DraftShift Design, "StealthChanger"  
-https://github.com/DraftShift/StealthChanger  
+-https://github.com/DraftShift/StealthChanger  
 
 DraftShift Design & Viesturz "klipper-toolchanger"  
-https://github.com/viesturz/klipper-toolchanger (use this one until DraftShift greenlights their version for public use!)
-https://github.com/DraftShift/klipper-toolchanger  
+-https://github.com/viesturz/klipper-toolchanger (use this one until DraftShift greenlights their version for public use!)
+-https://github.com/DraftShift/klipper-toolchanger  
 
 Thiessen with DraftShift Design for being INCREDIBLY helpful and patient with helping the community find answers when needed.
 
