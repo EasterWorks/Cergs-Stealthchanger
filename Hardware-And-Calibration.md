@@ -52,7 +52,7 @@ The main difference between the standard Stealthburner and the Stealthchanger ad
 - M3x5x4mm heat-set inserts (x2)
 
 ### Backplate (each):
-- OptoTAP optical sensor (1x)
+- OptoTAP optical sensor (x1)
 - 6x3mm N52 neodymium magnet (x1)
 - M3x6 FHCS (x2)
 - M3x6 BHCS (x2, used to retain the OptoTAPs - may also use M3x8, just screw them in slowly)
