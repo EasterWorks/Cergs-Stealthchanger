@@ -327,11 +327,11 @@ Next we need to actually input the idle temperature we want to use. Next to the 
 Finally, and this is more of a quality of life note - your print should always start on T0 so the offsets on your other toolheads apply correctly. With the Machine_Start gcode in the Stealthchanger repo, Orca Slicer will start with whatever toolhead has the most volume on the first layer. So if you're printing something that starts mostly with the material you have loaded in T1, you can add a primitive cube with only one layer of height and just enough surface area to print with the material in T0 to trick Orca Slicer into thinking T0 needs to be the start nozzle. I'm still looking for a better way around this, but it's better than a print failing. **You can avoid this** by using my Machine_Start and Change Filament Gcode, as well as the TOOLCHANGER_PRINT_START gcode macro I've edited - the slicer gcodes are in the Gcode folder, the TOOLCHANGER_PRINT_START macro is in this repo under Firmware in the toolchanger_macros.cfg file.
 
 
-# Machine Start and Machine End Gcode
+# Machine Start, Change Filament and Machine End Gcode
 
 I have supplied the needed start and end print gcodes in the Gcode folder for Orca Slicer, as Orca Slicer currently has the friendliest functionality and most up to date features in my opinion:
-- Machine start: https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Gcode/OrcaSlicer%20Machine_Start%20Gcode
-- Machine end: https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Gcode/OrcaSlicer%20Machine_End%20gcode
+- Machine Start and Change Filament Gcode: https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Gcode/OrcaSlicer%20Machine_Start%20Gcode.md
+- Machine End Gcode: https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Gcode/OrcaSlicer%20Machine_End%20gcode.md
 
 These will work with the other example CFG's I've provided here. The only special consideration is that, in order to differentiate toolchange starts/ends from non-toolchanger starts/ends, I have renamed the toolchanger print start and print end gcodes both in toolchanger.cfg and in the print start/end gcodes that need to be input to Orca Slicer. 
 
