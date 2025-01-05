@@ -24,6 +24,8 @@ Complete the following sections in order to replicate my process.
 
 # Add-Ons and Updates for Klipper
 
+**First: BACK UP YOUR CURRENT CFG'S!!!!!**
+
 You will need to install the following Klipper add-ons:
 - Klipper-Toolchanger: https://github.com/viesturz/klipper-toolchanger/
 
