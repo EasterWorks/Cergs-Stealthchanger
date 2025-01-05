@@ -1,4 +1,4 @@
-Explanation of STL files in this folder:
+# Explanation of STL files in this folder
 
 
 ### MGN12-shuttle.stl:
