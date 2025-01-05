@@ -56,6 +56,17 @@ The main difference between the standard Stealthburner and the Stealthchanger ad
 - M4x12mm round-head dowel pins (x3)
 - M3x5x4mm heat-set inserts (4x)
 
+### Dock (each):
+- M5x8 BHCS (2x)
+- M5 T-nut/hammer nut (2x)
+- M3x8 SHCS (x2)
+- M3x8 BHCS (x4)
+- M3x30 SHCS (4x)
+- M3x60 SHCS (x2)
+- M3 heat-set inserts (x10)
+
+If you would like to print any of the wiper options, ensure you instead print the "Stubby" spring steel body and pay attention to the changes therein.
+
 
 # Printed Part Selection
 
@@ -138,6 +149,9 @@ The second source, arthur belanger on Printables, replaces the multi-part front 
 
 The third source is back with DraftShift for their modular docks, particularly the blocker. I used the spring steel body approach to use hobby blades with a molded silicone pad; if you prefer to use the cup style, you can go with that as well:
 - https://github.com/DraftShift/ModularDock/tree/main/STLs/Blockers
+
+Finally, back in DSD's repo, you'll need a Stealthburner dock backplate:
+- https://github.com/DraftShift/ModularDock/blob/main/STLs/Stealthburner/Back.stl
 
 
 # - Preparing, Assembling, and Installing the Shuttle
