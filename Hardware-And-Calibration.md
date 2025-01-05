@@ -12,21 +12,21 @@ Complete the following sections in order to replicate my process.
 
 # Table of Contents
 - [Add-Ons and Updates for Klipper](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#add-ons-and-updates-for-klipper)
-- Bill of Materials
-- Printed Part Selection
-- Preparing, Assembling, and Installing the Shuttle
-- Preparing, Assembling, and Installing the Backplates
-- Heat-Treating Process for Backplates
-- The Dock Crossbar and Bulking Out the Front of the Printer (not in the BOM!)
-- Other Assembly Notes
-- Special Notes on OptoTAP
-- Nozzle Offsets - Probe-to-Nozzle and Gcode
-- PID, Input Shaper, Extruder Rotation Distance, and Pressure Advance Tuning
-- Dock Parking Calibration, Testing, and Safe Zone Specification
-- Purge, Preheat, and Other Relevant Orca Slicer Settings
-- Machine Start and Machine End Gcode
-- Nozzle Offsets - X/Y Offset
-- Final Considerations
+- [Bill of Materials](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#bill-of-materials)
+- [Printed Part Selection](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#printed-part-selection)
+- [Preparing, Assembling, and Installing the Shuttle](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#preparing-printing-and-installing-the-shuttle)
+- [Preparing, Assembling, and Installing the Backplates](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#preparing-printing-and-installing-the-backplates)
+- [Heat-Treating Process for Backplates](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#heat-treating-process-for-backplates)
+- [The Dock Crossbar and Bulking Out the Front of the Printer (not in the BOM!)](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#the-dock-crossbar-and-bulking-out-the-front-of-the-printer-not-in-the-bom)
+- [Other Assembly Notes](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#other-assembly-notes)
+- [Special Notes on OptoTAP](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#special-notes-on-optotap)
+- [Nozzle Offsets - Probe-to-Nozzle and Gcode](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#nozzle-offsets-probe-to-nozzle-and-gcode) 
+- [PID, Input Shaper, Extruder Rotation Distance, and Pressure Advance Tuning](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#pid-input-shaper-extruder-rotation-distance-and-pressure-advance-tuning)
+- [Dock Parking Calibration, Testing, and Safe Zone Specification](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#dock-parking-calibration-testing-and-safe-zone-specification)
+- [Purge, Preheat, and Other Relevant OrcaSlicer Settings](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#purge-preheat-and-other-relevant-orcaslicer-settings) 
+- [Machine Start and Machine End Gcode](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#machine-start-and-machine-end-gcode) 
+- [Nozzle Offsets - X/Y Offset](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#nozzle-offsets-x-y-offset) 
+- [Final Considerations](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#final-considerations) 
 
 
 # Add-Ons and Updates for Klipper
@@ -313,7 +313,7 @@ Now we're going to look at the _Safe Zone_. This is a parameter you can edit in 
 Why the Safe Zone? Well, if you don't specify this, your toolhead may get too close to the dock when switching tools and end up ramming the bottom of the cowl into the lip of the dock as it rounds out the movement path. You can adjust these values as you see fit, but be sure to do it in small increments to avoid any unfortunate accidents!
 
 
-# Purge, Preheat, and Other Relevant Orca Slicer Settings
+# Purge, Preheat, and Other Relevant OrcaSlicer Settings
 
 So first, you actually need to enable multi-material printing in Orca Slicer. Open your printer settings and switch to the "Multimaterial" tab. Under "Single extruder multi-material setup", ensure "Single Extruder Multi Material" is unticked, then enter "2" (or whatever number of toolheads you have) for "Extruders". At the very bottom of this page, you can enter a value in seconds for "Tool Change Time" - this is how long it takes your printer to depart from the print, switch tools, and return to the print. You should time and update this after dialling in your idle and preheat temperatures to ensure you get useful print time estimates.
 
