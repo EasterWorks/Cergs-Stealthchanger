@@ -1,6 +1,6 @@
 This page is a WIP kinda but should be full of hopefully helpful information.
 
-### I am not responsible for any silly litte mistakes you make during the following process. You need to read this document, think about the parts you don't understand, and do research before starting this project. Hot robots can leave burns, cuts, scrapes, even break bones. They can electrocute you and even burn your house down too if you aren't careful. Tinker responsibly!
+### I am not responsible for any silly litte mistakes you make during the following process. You need to read this document, think about the parts you don't understand, and do research before starting this project. Hot robots can leave burns, cuts, scrapes, break their own parts, and break your parts, too. They can electrocute you and even burn your house down too if you aren't careful. Tinker responsibly!
 
 ## HOW DO I STEALTHCHANGER?
 Complete the following sections in order to replicate my process.
