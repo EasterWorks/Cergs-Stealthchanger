@@ -378,7 +378,9 @@ If you have a part you want to print with multiple colors, you can just drag all
 ### Separate custom supports from the printable object
 In the cubes reference I used for "Parts" - if you butt those cubes up together on their sides, their perimeters on the joining sides will merge and OrcaSlicer will not give each cube its own entire distinct shell as an efficiency measure, basically treating it purely like a color change. So if you happen to stack one cube below another cube, intending to use the lower cube as a removable support for the above cube, and then slice it - there will be no top on the lower cube and no bottom on the top cube. 
 
-In order to keep custom support objects from merging like this with the printable object, you HAVE TO import them as separate objects and then assign different toolheads to them. If the part origins are off, you will have to MANUALLY shift them together in the slicer's viewport to get them aligned properly. For what it's worth, simply setting all your interface distance values to 0 and kicking up the interface layer count also works pretty well, but you need to make sure all the corners of the interface layers are well-supported.
+In order to keep custom support objects from merging like this with the printable object, you HAVE TO import them as separate objects and then assign different toolheads to them. If the part origins are off, you will have to MANUALLY shift them together in the slicer's viewport to get them aligned properly. But you ALSO have to ensure that both of the parts start on layer 1, because you can't offset separate objects in the slicer along the Z axis. You _can_ offset along the Z axis with Parts, but with zero-clearance supports, you need to butt up the two parts to the point where they're touching - which will merge the two and ruin the supported face.
+
+For what it's worth, simply setting all your interface distance values to 0 and kicking up the interface layer count also works pretty well, but you need to make sure all the corners of the interface layers are well-supported.
 
 
 # Final Considerations
