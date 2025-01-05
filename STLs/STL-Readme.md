@@ -1,7 +1,7 @@
 # Explanation of STL files in this folder
 
 
-### MGN12-shuttle.stl:
+### shuttle_redesign.stl:
 This is a replacement for the shuttle in the Stealthchanger repo that adds channels for excess belt pathing. The intention is that you will thread your belts around the "corner" and into the available channels as far as possible, then trim anything that sticks out of the sides. This both helps install the shuttle without juggling the belts and using strange methods to hold the belts in place and allows for the advisable retention of extra belt length just in case. Actual amount of Y axis travel loss TBD.
 
 ### zero_clearance_supports.stl
