@@ -211,6 +211,8 @@ I went with the latter, as I had already done so for installing the Fridge Door/
 
 When you have handled this the way you see fit, you'll want your crossbar to fit between the first loop of T-slots after the ones that are part of the original frame. This crossbar needs to span side-to-side across the frame extension you've added and it'll need to be held in place with corner brackets (or internal corner brackets, which I like more). DO YOUR BEST to ensure it's as flat to the frame as possible - use a machinist's square and a bubble level if you need to. It doesn't have to be perfect, but it should be as close as you can get it.
 
+The crossbar should be as HIGH UP as you can get it while still being reachable for your Z travel and allowing proper space for toolheads to dock and for the umbilical and bowden tube to not impact the top of the frame.
+
 The third option here is to build what's called the Liftbar. I have no expertise or experience to share with this as it involves adding another axis to your 3D printer specifically for tools and is more at home on something like a Trident where the gantry doesn't travel along the Z axis. You can find more details about this in the Tapchanger repo if you wish to go that route, but I have no further/supplemental information about that and it will likely conflict with other information presented later in this document:
 - https://github.com/viesturz/tapchanger/blob/main/Dock/Liftbar/Liftbar.md
 
