@@ -11,8 +11,8 @@ This repo may be useful to you if you have similar design constraints and requir
 - You want to use Stealthburner toolheads with the E3D Revo hotend ecosystem.
 - You are using LDO's Nitehawk-SB or Nitehawk-36 toolhead boards and Isik Tech's Birds' Nest for toolhead board networking.
 - You are using the standard X/Y endstops that are located on the intersection of the X and Y axiis rather than the toolhead-mounted endstops or sensorless homing.
-- You are using OptoTAP v2.4.1 for your Z axis probe and endstop trigger.
-- You are me in the future and nuked your config files again.
+- You are want to use OptoTAP v2.4.1 for your Z axis probe and endstop trigger.
+- You are me in the future and nuked your config files again or forgot how to calibrate something.
 
 
 In addition, I have edited and provided a few STL's that improve upon the original design and/or make it more suitable for the above considerations.  
