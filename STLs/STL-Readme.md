@@ -5,7 +5,7 @@
 This is a replacement for the shuttle in the Stealthchanger repo that adds channels for excess belt pathing. The intention is that you will thread your belts around the "corner" and into the available channels as far as possible, then trim anything that sticks out of the sides. This both helps install the shuttle without juggling the belts and using strange methods to hold the belts in place and allows for the advisable retention of extra belt length just in case. Actual amount of Y axis travel loss TBD.
 
 ### zero_clearance_supports.stl
-This is an OPTIONAL part for printing the shuttle with a pre-made zero-clearance support structure. This is intended for you to use _after_ you already have your Stealthchanger assembled in the event you'd like to use a higher quality material, or simply to get a """"better""" shuttle print, but you could feasibly do it with manual filament changes if you're okay with sitting there watching for 64 tool changes. 
+This is an **OPTIONAL** part for printing the shuttle with a pre-made zero-clearance support structure. It SHOULD work with the original DSD shuttle design, but I haven't tested it with that yet. This is intended for you to use _after_ you already have your Stealthchanger assembled in the event you'd like to use a higher quality material, or simply to get a """"better""" shuttle print, but you could feasibly do it with manual filament changes if you're okay with sitting there watching for 64 tool changes. 
 
 Print settings:
 - Import this into OrcaSlicer, set it to be printed with your tool that is loaded with PLA, PLA+, or PLA Repid. Set its position to the center of the bed.
