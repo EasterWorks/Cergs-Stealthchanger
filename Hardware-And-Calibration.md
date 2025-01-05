@@ -50,6 +50,7 @@ Remember that this repo is centered around the concept of implementing the Steal
 ### Stealthburner:
 - [LDO Nitehawk-SB](https://west3d.com/products/nitehawk-stealthburner-toolboard-sb-pcb-by-ldo-motors) (one per toolhead) 
 - [E3D Revo hotend](https://www.filastruder.com/products/e3d-revo-voron?variant=39567818981447) (one per toolhead)
+- [4mm ECAS fitting](https://www.amazon.com/Pneumatic-Connector-Fittings-Extruder-Accessories/dp/B0CB6SJBS9) (one per toolhead)
 - All other commercial parts needed for the Stealthburner can be found [here](https://vorondesign.com/voron_stealthburner), with the exception of the Cables and Optional - ADXL345 Sensor sections.
 
 The main difference between the standard Stealthburner and the Stealthchanger adaptation is that instead of putting heat sets and screws into the original Voron 2.4 shuttle, you'll instead be putting those parts into the backplates.
