@@ -20,6 +20,7 @@ Complete the following sections in order to replicate my process.
 - [The Dock Crossbar and Bulking Out the Front of the Printer (not in the BOM!)](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#the-dock-crossbar-and-bulking-out-the-front-of-the-printer-not-in-the-bom)
 - [Other Assembly Notes](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#other-assembly-notes)
 - [Special Notes on OptoTAP](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#special-notes-on-optotap)
+- [Running Your Umbilical Cables](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#running-your-umbilical-cables)
 - [Nozzle Offsets - Probe-to-Nozzle and Gcode](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#nozzle-offsets---probe-to-nozzle-and-gcode) 
 - [PID, Input Shaper, Extruder Rotation Distance, and Pressure Advance Tuning](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#pid-input-shaper-extruder-rotation-distance-and-pressure-advance-tuning)
 - [Dock Parking Calibration, Testing, and Safe Zone Specification](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#dock-parking-calibration-testing-and-safe-zone-specification)
@@ -196,7 +197,6 @@ Each backplate will require one N52 6x2mm magnet, two M3x6 FHCS, two M3x8 SHCS, 
 
 After assembly and heat-treating, attach the backplate to the rear of the Stealthburner using the same screws that were previously used to secure it to the default Voron 2.4 shuttle design. Install the OptoTAP in its position on the rear of the backplate and verify fitup with the shuttle is still solid and snappy. If you notice your backplates are slightly tilted along the X axis, you can back out the two FHCS screws in the backplate to force its alignment with the shuttle, or re-do the heat treating process until the fitup is better. This isn't super commonly needed, but if your backplates didn't come out perfectly, you may experience slight tilting once the entire Stealthburner toolhead is loaded on the shuttle. Some advocate using a "paper test" to check screw alignment - get both screws roughly in the position you'd like and then try to shove a strip of generic A4 printer paper in between the magnet and screw. If both screws are adjusted equally, the paper shouldn't slide under either of them.
 
-
 # Heat-Treating Process for Backplates
 
 I have seen this documented both in the Stealthchanger Discord server by several people as well as in the Stealthchanger repo wiki. This is intended to improve the fitup between your backplates and the shuttle. The shuttle should already be installed on the gantry at this point. Here is the process I did:
@@ -249,6 +249,32 @@ Make sure your umbilical isn't too tight or too loose that it messes with your p
 - Move the toolhead to the center of your bed.
 - Run the command PROBE_CALIBRATE SAMPLES=n where n = the number of Z axis probes you'd like to do. As you've already homed on Z successfully by this point, we know the probe is working, so we now want to run it up to as many as 500 probing samples to wear down contact surfaces into smooth operation. For example, PROBE_CALIBRATE SAMPLES=500 will probe the Z axis 500 times.
 - Upon completion, run PROBE_CALIBRATE SAMPLES=25 and review the variance results that are reported in the console. You want the variance to be at an absolute maximum 0.025mm (the biggest variance recommended for Klipper), but using the methods described here, I have achieved a variance as low as 0.00028mm. When you achieve good results, edit your QGL macro in printer.cfg to the recommended 0.00750mm tolerance.
+
+
+# Running Your Umbilical Cables
+
+Obviously, your umbilical cable for each toolhead will need to run through two PG7 cable glands, the PG7 mount on the toolhead, and the exhaust plate. To do this, you will unfortunately have to lop off the connector in one end. One side of the umbilical has an XT30 2+2 connector, the other has a 6-pin Microfit connector. The Microfit connector is the easier one to re-pin, and your LDO Nitehawk kit will come with spares (so does the Isiks Tech Birds' Nest). 
+
+Make sure you have wire cutters, a stripping tool, a crimping tool ready, and understand how to use them properly. Find a reference image or take a picture of the cables going into the connector so you remember the wire orientation.
+
+Alternatively, you can use a Microfit pin extractor tool, but the pins may not lock back into place when re-inserted.
+
+- First, cut off that 6-pin Microfit connector as close to the crimped pins as you can. You'll still want to cut back the cable sheath a few CM to give you enough space to strip the wires as well.
+- Connect the other side with the XT30 connector into the toolhead board.
+- Thread the cut end through the BOTTOM of the Stealthburner PG7 mount.
+- Remove the water seal from a PG7 connector (disassemble it, it should be "stuck" in the thread side of the end of the gland) and slip the PG7 on to the cable threads-first and run it all the way to the Stealthburner PG7 mount. Give the umbilical enough slack between the PG7 and the Nitehawk board enough slack that it can plug in comfortably without putting tension on the XT30 connector, but not so much that it looks messy or sticks out enough to hook on stuff.
+- Tighten down the PG7 on the Stealthburner PG7 mount. You don't have to crank it down super hard, just until it feels like it won't walk itself back out.
+- Slip another PG7 with the water seal removed on to the umbilical, in the opposite orientation of the previous one (so gland toward the toolhead, threads toward the cut end).
+- If you are using my exhaust plate design, you can now re-pin the cut end and install the new Microfit connector. You will not need to cut it further to get it into my exhaust plate design.
+- If you are NOT using my exhaust plate design, you may need to thread the umbilical into it before repinning the connector.
+- **DO NOT CUT THE CABLE TO LENGTH YET**
+- Screw the base of the PG7 into the exhaust plate solution you chose, then LOOSELY screw on the end of the gland. You will need to leave yourself some adjustability here while you figure out the slack on your umbilical.
+
+After that, carefully jog your toolhead as FAR AWAY from the exhaust plate as it can get on the bed. If you have a negative Y minimum value, get it all the way out there.  Make sure the umbilical has enough slack to have an arc to it while the toolhead is in that position - the idea is that when the tool is probing for a QGL or bed mesh here, the umbilical cable isn't so slack that it's pushing down on the toolhead, while also not being so tight that it affects the probe's readings. You will want to re-address tension later once your configuration/calibration is finished by moving the toolhead to its furthest position from the exhaust plate, running PROBE_ACCURACY SAMPLES=50 in the console, and adjusting the umbilical length until your result variance is as little as possible.
+
+Once you have done this, you can tighten down the PG7 gland on the exhaust plate, then install the umbilical clips mentioned above in the printed part section, bowden tubes, and 1mm piano wire.
+
+Repeat this process for each toolhead.
 
 
 # Nozzle Offsets - Probe-to-Nozzle and Gcode
