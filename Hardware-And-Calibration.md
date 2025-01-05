@@ -26,8 +26,8 @@ Complete the following sections in order to replicate my process.
 - [Purge, Preheat, and Other Relevant OrcaSlicer Settings](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#purge-preheat-and-other-relevant-orcaslicer-settings) 
 - [Machine Start, Change Filament and Machine End Gcode](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#machine-start-change-filament-and-machine-end-gcode) 
 - [Nozzle Offsets - X/Y Offset](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#nozzle-gcode-offsets---xy-offset) 
+- [Musing on silly things I didn't think about at first](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#musing-on-silly-things-i-didnt-think-about-at-first) 
 - [Final Considerations](https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md#final-considerations) 
-
 
 # Add-Ons and Updates for Klipper
 
@@ -360,6 +360,25 @@ of the bed to maintain the orientation.
 
 When the print has completed, the two sections will most likely be offset by a small amount. I use a digital depth gauge to determine just how offset these are and note that for both axiis.
 Once noted, enter the information for your gcode_x_offset and gcode_y_offset values in the tool you're calibrating as mentioned above. Remember; positive values move TOWARD the axis' travel limit.
+
+
+# Musing on silly things I didn't think about at first
+
+### Macro sillyness
+Sometimes when you directly run a gcode macro from toolchanger via the console, Klipper might stop the command because it's calling a recursive error and crap its pants into an emergency stop. Any gcode macro or command reference with an underscore at the beginning (example: _INITIALIZE_FROM_DETECTED_TOOL) is meant to be hidden in able to allow "extra features" (to call .py scripts that aren't exposed to do backend things and trigger other stuff to happen that we can't see from Klipper's user side) and not ever manually called. 
+
+When you load a toolhead by hand, you can homne it to force it to detect the tool you loaded, but you should use INITIALIZE_TOOLCHANGER as a best practice (Klipper will call that macro before trying to home anyway). I was using _INITIALIZE_FROM_DETECTED_TOOL for a while and had previously edited a whole bunch of the klipper-toolchanger configs to stop it from throwing a recursive reference error. That was silly. Most of this stuff works out of the box with just a few edits, all of which I've highlighted with my hindsight goggles.
+
+### Slicer weirdness
+If you have a part you want to print with multiple colors, you can just drag all the files together in OrcaSlicer and pick "yes" when it asks if you want to add them all as parts of the same object. OrcaSlicer has three different types of "things" you should be aware of:
+- Objects: These are entities that represent the collective entirety of a printable object.
+- Parts: These are entities that represent part of an object. For example; if you have a cube and you right-click it and add another cube to it, OrcaSlicer is going to treat both of those cubes as the same object, because one is related to the other as a "part".
+- Modifiers: These are entities that represent setting modifications to specific parts of an object.
+
+### Separate custom supports from the printable object
+In the cubes reference I used for "Parts" - if you butt those cubes up together on their sides, their perimeters on the joining sides will merge and OrcaSlicer will not give each cube its own entire distinct shell as an efficiency measure, basically treating it purely like a color change. So if you happen to stack one cube below another cube, intending to use the lower cube as a removable support for the above cube, and then slice it - there will be no top on the lower cube and no bottom on the top cube. 
+
+In order to keep custom support objects from merging like this with the printable object, you HAVE TO import them as separate objects and then assign different toolheads to them. If the part origins are off, you will have to MANUALLY shift them together in the slicer's viewport to get them aligned properly. For what it's worth, simply setting all your interface distance values to 0 and kicking up the interface layer count also works pretty well, but you need to make sure all the corners of the interface layers are well-supported.
 
 
 # Final Considerations
