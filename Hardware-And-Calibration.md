@@ -10,6 +10,7 @@ Complete the following sections in order to replicate my process.
 - Preparing, Assembling, and Installing the Shuttle
 - Preparing, Assembling, and Installing the Backplates
 - Heat-Treating Process for Backplates
+- The Dock Crossbar and Bulking Out the Front of the Printer (not in the BOM!)
 - Other Assembly Notes
 - Special Notes on OptoTAP
 - Nozzle Offsets - Probe-to-Nozzle and Gcode
@@ -155,44 +156,44 @@ Finally, back in DSD's repo, you'll need a Stealthburner dock backplate:
 
 
 # - Preparing, Assembling, and Installing the Shuttle
-WIP [need to add pictures and part links]
-All Stealthchanger shuttle designs need to have bushings installed in the corresponding hex-slot holes. Some people glue them in, but the intention is for them to be a near-pressfit. The specific bushings you'll want are (4mm?) oilless bearings. [insert link to adequate option here]
+All Stealthchanger shuttle designs need to have bushings installed in the corresponding hex-slot holes. Some people glue them in, but the intention is for them to be a near-pressfit. You can find details on the specific bushings in the Bill of Materials section above.
 
-There is a hole for an M3 heat set insert that can go into the bottom center of the shuttle along where the MGN rail shuttle connects - I have yet to see anyone use this hole for anything, so skip adding a heat set here. [picture]
+There is a hole for an M3 heat set insert that can go into the bottom center of the shuttle along where the MGN rail shuttle connects - I have yet to see anyone use this hole for anything, so skip adding a heat set there
 
-Below the above hole, there are two more holes for M3 heat set inserts. Those are to connect the X axis endstop prod in my design, but are absent in the original design. You will need to install heat sets there to use the X axis endstop prod.
+Below the above-mentioned hole, there are two more holes for M3 heat set inserts. Those are to connect the X axis endstop prod in my design, but are absent in the original design. To use the prod, you will also need to print my redesigned shuttle, then secure it to the shuttle with two M3x8 SHCS.
 
 Next, you need 3 6x2mm neodymium magnets. The ones you want to get are N52 with a working temperature rating of 80c. N52 magnets are very strong variants of neodymium and 80c will put you far and beyond the temperature your magnets should ever hit. If you just buy a generic unlabelled pack of neodymium magnets, you will probably get N42s - not as strong, and usually max working temp rating of 60c. These can still work, but I like the strength and safety margins of the N52's, and it's worth a few more dollars for a lifetime supply.
 
-In my redesign of the shuttle, I extended the "fin" at the top so you can trim it only as low as is needed for the backplate to seat fully using some flush cutters. I suggest taking off 1mm of material from that fin at a time until you get the backplate almost fully seated to the shuttle, then file or sand down the rest until your backplate is fully there. The original design has this fin already designed to match up "perfectly" with the backplates - however, in my experience, stacking tolerances lead to that fin sometimes being just too short. 
+In my redesign of the shuttle, I extended the "fin" at the top so you can trim it only as low as is needed for the backplate to seat fully using some flush cutters. I suggest taking off 1mm of material from that fin at a time until you get the backplate almost fully seated to the shuttle, then file or sand down the rest until your backplate is fully there. The original design has this fin already designed to match up "perfectly" with the backplates - however, in my experience, stacking tolerances lead to that fin sometimes being just slightly too short. 
 
-Finally, you'll notice that the side of the shuttle where the grooves for the 6mm 2GT X/Y axis belts probably printed really ugly. That's fine, realistically all we need here is some surface disruption to grip into the belts. On my redesign of the shuttle, just in front of those grooves, I have added some channels that you can use to slip excess length of the X/Y belts into - this helps get your belts tensioned properly by giving you somewhere to tug on them while preventing you from cutting your belts too short in case something goes wrong and you need to switch back to your original setup temporarily in an emergency. You DO lose about 4mm of Y axis travel because of the needed additional thickness, so be aware of that. If you don't care about having this in a compact one-piece package, there are also belt tensioning guides in the Stealthchanger repo, but I find using additional tools for what should be a fairly simple install to be a bit too much.
+Finally, you'll notice that the bottom side of the shuttle where the grooves for the 6mm 2GT X/Y axis belts probably printed really ugly. That's fine, realistically all we need here is some surface disruption to grip into the belts. In the STLs folder of this repo, I have added a zero-clearance support structure with some instructions you may use if you wish, but I don't recommend it - this isn't necessary and is only really useful to you if you already have a functional Stealthchanger or other filament-changing printer. On my redesign of the shuttle, just around the corner from those grooves, I have added some channels that you can use to slip excess length of the X/Y belts into - this helps get your belts tensioned properly by giving you somewhere to tug on them while preventing you from cutting your belts too short in case something goes wrong and you need to switch back to your original setup temporarily in an emergency. You DO lose about 4-5mm of Y axis travel because of the needed additional thickness and may therefore need to shift your bed forward that much if you use a nozzle cleaning brush in the rear corner, so be aware of that. If you don't care about having this in a compact one-piece package, there are also belt tensioning guides in the Stealthchanger repo, but I find using additional tools for what should be a fairly simple install to be a bit too much.
 
-- To install the shuttle, you'll first of course need to fully disengage the X/Y idlers on your gantry to give us some available room for tensioning once the new shuttle is installed.
+To install the shuttle:
+- You'll first of course need to fully disengage the X/Y idlers on your gantry to give us some available room for tensioning once the new shuttle is installed.
 - Remove the shuttle from your original toolhead. You should be stripping off everything so that your mounting surface is the four tips of the X/Y belts and the MGN12 shuttle.
 - Insert the belts into the shuttle in the correct orientation and wrap them back around and into the previously-mentioned channels.
 - Insert the 4x M3x8 SHCS screws used to mount the Stealthchanger shuttle on the MGN12 shuttle, but don't tighten them fully - you want to still be able to pull the belts through.
 - Pull on both sets of belts with roughly equal tension (the more accurate you are here, the easier tensioning will be). 
 - Once you are happy with the tension on the belts, screw the Stealthchanger shuttle down securely to the MGN12 shuttle.
-- Returning to the X/Y idlers, apply proper and equal tension to each belt. Use your favorite trick for tensioning Voron 2.4 X/Y belts, just primarily make sure that it's even and you aren't over-tightening them. This can always be fine-tuned down the line.
+- Returning to the X/Y idlers, apply proper and equal tension to each belt at the X/Y tensioners. Use your favorite trick for tensioning Voron 2.4 X/Y belts, just primarily make sure that it's even and you aren't over-tightening them. This can always be fine-tuned down the line.
 
 
 # Preparing, Assembling, and Installing the Backplates
-WIP [need to add pictures and part links]
-Each backplate will require one N52 6x2mm magnet, two M3x6 FHCS, two M3x8 SHCS, four M3 heat-set inserts, and three 4mm(?) dowel pins. Once you assemble all the parts, skip down to the next section (Heat-Treating Process for Backplates), then return here.
+Each backplate will require one N52 6x2mm magnet, two M3x6 FHCS, two M3x8 SHCS, four M3 heat-set inserts, and three dowel pins as mentioned in the Bill of Materials section above. Once you install the parts to the backplate and have installed your shuttle on the X axis, skip down to the next section (Heat-Treating Process for Backplates), then return here.
 
-After assembly and heat-treating, attach the backplate to the rear of the Stealthburner using the same screws that were previously used to secure it to the default Voron 2.4 shuttle design. Install the OptoTAP in its position on the rear of the backplate and verify fitup with the shuttle is still solid and snappy. If you notice your backplates are slightly tilted along the X axis, you can back out the two FHCS screws in the backplate to force its alignment with the shuttle. This isn't super commonly needed, but if your backplates didn't come out perfectly, you may experience slight tilting once the entire Stealthburner toolhead is loaded on the shuttle. Some advocate using a "paper test" to check screw alignment - get both screws roughly in the position you'd like and then try to shove a strip of generic A4 printer paper in between the magnet and screw. If both screws are adjusted equally, the paper won't slide under either of them.
+After assembly and heat-treating, attach the backplate to the rear of the Stealthburner using the same screws that were previously used to secure it to the default Voron 2.4 shuttle design. Install the OptoTAP in its position on the rear of the backplate and verify fitup with the shuttle is still solid and snappy. If you notice your backplates are slightly tilted along the X axis, you can back out the two FHCS screws in the backplate to force its alignment with the shuttle, or re-do the heat treating process until the fitup is better. This isn't super commonly needed, but if your backplates didn't come out perfectly, you may experience slight tilting once the entire Stealthburner toolhead is loaded on the shuttle. Some advocate using a "paper test" to check screw alignment - get both screws roughly in the position you'd like and then try to shove a strip of generic A4 printer paper in between the magnet and screw. If both screws are adjusted equally, the paper shouldn't slide under either of them.
 
 
 # Heat-Treating Process for Backplates
 
-I have seen this documented both in the Stealthchanger Discord server as well as in the Stealthchanger repo wiki. This is intended to improve the fitup between your backplates and the shuttle. The shuttle should already be installed on the gantry at this point. Here is the process I did:
+I have seen this documented both in the Stealthchanger Discord server by several people as well as in the Stealthchanger repo wiki. This is intended to improve the fitup between your backplates and the shuttle. The shuttle should already be installed on the gantry at this point. Here is the process I did:
 
 - Install pins in the backplates.
 - Place ONE backplate on the bed on its flat face, set bed temperature to 110c, and close the door.
 - Wait around one hour. To check if it's been long enough, touch the metal pins - they should be hot.
 - Turn off the bed heater and open the enclosure door.
 - While still hot, install the backplate on the shuttle firmly. If it tries to lift itself, secure it only as much as is needed for it to seat properly with a ziptie.
+- Close the enclosure door (we want to let the heat in the chamber SLOWLY drop).
 - Allow this to sit for 4-5 hours or until the backplate is entirely cool to the touch.
 - Once cooled, remove/insert the backplate into the shuttle a few times to see how fitup feels. If it's still bad, repeat. If it's still bad after repeating, you may need to reprint the backplate or shuttle.
 - Repeat for each backplate.
@@ -200,10 +201,24 @@ I have seen this documented both in the Stealthchanger Discord server as well as
 This sounds a bit annoying, and it is - but this is how you get really accurate results with the OptoTAP in my experience.
 
 
+# The Dock Crossbar and Bulking Out the Front of the Printer (not in the BOM!)
+
+Now you may be thinking, "where are these docks supposed to go? If I just bolt a crossbar in here, I won't be able to move the Z axis up enough to change tools!" You are correct. There are two common approaches to this:
+- Replace the front loop of 2020 extrusions in the Voron 2.4 frame with 2040's. This requires installing compatible joints with whichever style your frame uses.
+- Cut down some 2020 extrusions the exact same size of the front extrusion loop of your printer's frame and stick it on to the front using your preferred method.
+
+I went with the latter, as I had already done so for installing the Fridge Door/Klacky Door mod. I simply made another loop the exact same size and printed one of the thousands of designs of flat joining plates for 2020 extrusions. So, in total, the front frame loop of my Voron is THREE loops of 2020 extrusions. You only need two, or one loop of 2040 extrusions.
+
+When you have handled this the way you see fit, you'll want your crossbar to fit between the first loop of T-slots after the ones that are part of the original frame. This crossbar needs to span side-to-side across the frame extension you've added and it'll need to be held in place with corner brackets (or internal corner brackets, which I like more). DO YOUR BEST to ensure it's as flat to the frame as possible - use a machinist's square and a bubble level if you need to. It doesn't have to be perfect, but it should be as close as you can get it.
+
+The third option here is to build what's called the Liftbar. I have no expertise or experience to share with this as it involves adding another axis to your 3D printer specifically for tools and is more at home on something like a Trident where the gantry doesn't travel along the Z axis. You can find more details about this in the Tapchanger repo if you wish to go that route, but I have no further/supplemental information about that and it will likely conflict with other information presented later in this document:
+- https://github.com/viesturz/tapchanger/blob/main/Dock/Liftbar/Liftbar.md
+
+
 # Other Assembly Notes
-- In each Stealthburner you assemble, insert a 5x2mm magnet in front of the bottom two cowl screws. These will help secure the toolheads in their docks by magnetizing to the ends of the screws specified in the design documents for the dock parts linked above. Contrary to common opinion at the start, these DON'T get stuck in there forever - you can remove them just by magnetizing them to a piece of metal (ie. a machine screw head) from the outside and pulling them straight out.
-- Ensure the X-axis dragchain is eliminated. Y-axis dragchain needs to remain in place for the X/Y endstop cable.
-- Ensure the Z axis dragchain allows the Z axis to move cleanly through its entire travel to the top. If it's getting caught on the guide stop mounted on the rear of the gantry, move the guide stop.
+- In each Stealthburner you assemble, insert a 5x2mm magnet in front of the bottom two cowl screws. These will help secure the toolheads in their docks by magnetizing to the ends of the screws specified in the design documents for the dock parts linked above. Contrary to common opinion at the start, these DON'T get stuck in there forever - you can remove them just by magnetizing them to a piece of metal (ie. a machine screw head) from the outside and pulling them straight out. You may need to adjust the two M3x8 screws that get installed in the front of the dock to ensure they just kiss the magnets when the toolhead is fully docked - if they aren't long enough, that's weird, but you can substitute the M3x8's for a longer screw if needed.
+- Ensure the X-axis dragchain is eliminated. Y-axis dragchain needs to remain in place for the X/Y endstop cable. All toolhead cabling is handled by the Nitehawk umbilical.
+- Ensure the Z axis dragchain allows the Z axis to move cleanly through its entire travel to the top. If it's getting caught on the guide stop mounted on the rear of the gantry, move the guide stop. If it isn't long enough, extend it.
 - When installing the dock crossbar, try to get it as even and square to the frame as possible. You won't get it perfectly but we can adjust for sub-mm variances in the firmware later.
 - If you had a nozzle brush in the back-right corner of the printer that you used before, it will probably be offset with the modified shuttle. The bed needs to move forward to accomodate for this - or you need to move the brush to the front of the bed and modify your CLEAN_NOZZLE gcode macro.
 - If you have very old X/Y belts, this is a great opportunity to install new ones.
