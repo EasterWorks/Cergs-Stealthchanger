@@ -124,6 +124,11 @@ Additionally, since we're going to use the X axis endstop on the X/Y intersectio
 
 The X axis prod is secured to the bottom of the shuttle using two M3x8 SHCS that screw into two M3 hot-sets you'll need to embed into either shuttle design in the provided holes. Its job is to touch the X axis endstop when it reaches its maximum travel. DSD has provided endstop triggers which serve a similar purpose to their design and can be found in their repo - I didn't realize this initially, hence designing my own, but I do also prefer the design I came up with, so I'm leaving it here. Use whichever one works best for you.
 
+If you DO NOT want to use my designs and prefer to use DSD's, you can get similar behavior from their shuttle design by printing their belt keeper:
+- https://github.com/DraftShift/StealthChanger/blob/main/STLs/Extras/Shuttle_Keeper_6mm_MGN12H.stl
+
+You will also need their shuttle and X-axis prod, naturally.
+
 
 ### PG7 gland mount for Stealthburner
 ![image](https://github.com/user-attachments/assets/3bd0a084-98f6-4e07-a211-87b29cfe814f)
