@@ -331,6 +331,8 @@ The only difference here is that instead of inputting these values to printer.cf
 
 # Dock Parking Calibration, Testing, and Safe Zone Specification
 
+**NOTE: Due to the location of the magnets in front of the bottom cowl screws on the Stealthburner toolhead, when you disassemble and reassemble the toolhead, you will want to redo the below process, as the bottom cowl screws can end up shifting their depth depending on how tight/loose they were re-installed.** You will only need to do that for the Y axis coordinate of each docking position and it should take less than 5 minutes per toolhead. The depth of the cowl itself can also shift depending on screw tightness, so before you start going crazy trying to embed magnets into it other than in the screwholes, don't bother.
+
 For setting up your dock positions:
 - First, attach the tool you want to calibrate to the shuttle by hand, then home all axiis and QGL.
 - Once finished, manually jog the toolhead to the point where it's sitting where you would like it to dock. Do this slowly and carefully, and start on the Z axis so you don't accidentally crash into your docks!
