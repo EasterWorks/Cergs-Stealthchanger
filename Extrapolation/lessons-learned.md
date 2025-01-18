@@ -29,6 +29,8 @@ However, the SLS shuttle is working great with both the "good" SLS backplate and
 
 From the first moment I installed the 1mm piano wire for umbilical control, I realized they were too stiff to run all the way to the toolhead, as it would pull the toolhead forward when it was near Y max - throwing off QGL and bed mesh results pretty significantly. There is another option to use 0.3mm x 3mm spring steel, but the most readily-available option for this is to purchase via Aliexpress. If you're like me, waiting 2-3 weeks for your parts to arrive means your printer is going to be essentially unusable for 2-3 weeks. 
 
+Using closer to a 0.6mm-0.8mm piano wire so it can be constrained on the toolhead would help with this, 1mm is just seemingly too stiff.
+
 Ultimately, the correct solution here is to use Igus ChainFlex cabling to replace your standard umbilical cable. This is quite cheap - if you buy directly from Igus, it's $1.25/ft. I ordered from West3D to ensure that the cable diameter was actually 7mm (same as the original umbilical) and had 6 conductors - Igus offers 5 and 7 conductors, but not 6 for whatever reason.
 
 **Lesson learned:** TBD, haven't received the ChainFlex quite yet.
