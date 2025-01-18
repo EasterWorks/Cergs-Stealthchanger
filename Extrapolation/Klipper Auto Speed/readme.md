@@ -154,7 +154,6 @@ Stats for nerds using the two-color Panda for reference, which has 151 tool chan
 - Cost of actual print filament: $0.76 USD
 
 **Differences**
-Prints with optimized toolchange speed and no purge tower vs without speed optimization using purge tower:
 - ~23.5% less total print time.
 - ~9.5% less total materials cost.
 - ~5.7% less material waste on purge tower.
