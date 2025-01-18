@@ -3,6 +3,15 @@
 This is going to be a compilation of trials I've done with the Stealthchanger system, particularly in expansion efforts over the original designs.
 
 
+## Redesigning Parts
+
+I didn't like the idea of cutting my belts exactly to length for the shuttle, so I designed a version of the shuttle which has integrated pathing for looping the belt around, so around 3-4cm of extra belth length can be retained. I found that this was resolved by a part from the SC repo called the belt keeper. This does basically the exact same thing, though it's a separate part instead of being integrated directly to the shuttle, so I do still personally prefer my design.
+
+In addition, I designed an X axis endstop trigger as a separate part for the shuttle. The SC repo does have an option for this as well, but it's a much larger part overall. I prefer mine for being lower profile while still doing the same work.
+
+**Lesson learned:** Check the Stealthchanger repo thoroghly before designing your own parts to solve problems. However, don't be afraid to make your own anyway if you have what you feel is a better idea for your setup and needs.
+
+
 ## SLS Shuttle and Backplates
 
 On a conceptual level, I was very interested in using SLS PA12 nylon processing for the shuttle and toolhead backplates. I ordered these from Xometry, whom I've had good experiences with in the past.
