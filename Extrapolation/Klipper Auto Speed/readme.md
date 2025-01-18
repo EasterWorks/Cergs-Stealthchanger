@@ -2,7 +2,7 @@ Once your Stealthchanger is functioning reliably, I have found it valuable to ru
 
 https://github.com/Anonoei/klipper_auto_speed
 
-For improving clarity, here is the entire process to install:
+For improving clarity, here is the entire process:
 
 ### Ensure Klippy-env is up to date:
 
@@ -96,3 +96,65 @@ The results that Klipper Auto Speed will present are essentially the maximum acc
 After doing this and restarting firmware, I advise running a QGL with your finger on the E-stop. QGL will use the max X/Y/Z speeds and accelerations for travel moves. If you hear groaning, belt skipping, or anything else concerning, dial back the speed by another 10%. Repeat until expensive sounds stop happening, then slowly increase it until they start again. Then decrease slightly below that level, and you have your max X/Y/Z travel movements.
 
 
+### Use case:
+
+The default speeds and accelerations for the Z axis in the Voron 2.4 printer.cfg are :
+
+```
+max_z_velocity: 15 			#Max 15 for 12V TMC Drivers, can increase for 24V
+max_z_accel: 350
+```
+
+In my experience, even doubling that default speed to 30 since Vorons run on 24v, this results in a 24-second toolchange procedure. It could be worse, but it could also be a whole lot better.
+
+After running Klipper Auto Speed, I found the physical limitations of the Z axis were actually quite a lot higher:
+
+```
+AUTO SPEED found recommended acceleration and velocity after 619.64s
+| Z max: a65974 v3917
+Recommended accel: 65974
+Recommended velocity: 3917
+```
+
+In practice, these were far too high. But using them to understand that my Z axis had very limited mechanical fluctuation helped me feel that I could safely increase speeds. 
+
+My speed and acceleration for the Z axis are now:
+
+```
+max_z_velocity: 150
+max_z_accel: 400
+```
+
+... which has resulted in toolchanges taking 9 seconds.
+
+On top of just simply making toolchanges faster so prints don't take as long, this also helps reduce the ooze that happens when a tool is travelling from the dock to the print. On 24s toolchanges, my tools can ooze around 3-4mm of material, necessitating the use of a purge tower. At 9s, they barely have any time to ooze, meaning a purge tower is no longer mandatory. So not only cutting down toolchange times and reducing ooze, but also eliminating the purge tower, all contribute greatly to overall print speed and reduce potential for failed prints.
+
+Stats for nerds using the two-color Panda for reference, which has 151 tool changes:
+
+**24-second toolchanges with a purge tower:**
+Total print time: 3h47m
+Time spent on toolchanges: 1h24s
+Time spent actually printing the Panda: 2h46m36s
+Filament used total: 51.81g
+Filament used on purge tower: 2.97g
+Filament used on actual print: 47.84g
+Total filament cost (for Elegoo PLA+ on both colors): $0.83 USD
+Cost of purge tower filament: $0.06 USD
+Cost of actual print filament: $0.77 USD
+
+**9-second toolchanges with no purge tower:**
+Total print time: 2h54m
+Time spent on toolchanges: 22m39s
+Time spent actually printing the Panda: 2h31m21s
+Filament used total: 47.84g
+Filament used on purge tower: 0g
+Filament used on actual print: 47.84g
+Cost (for Elegoo PLA+ on both colors): $0.76 USD
+Cost of purge tower filament: $0 USD
+Cost of actual print filament: $0.76 USD
+
+**Differences**
+Prints with optimized toolchange speed and no purge tower vs without speed optimization using purge tower:
+- 76.5% the total print time.
+- 91.5% the total materials cost.
+- 5.7% less material waste on purge tower.
