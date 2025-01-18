@@ -32,6 +32,11 @@ If you have any questions about necessary plugins or part designs, please reach 
 I have created a guide in this repo that covers all the steps I took from day 1 to fully-functional. You can find it here: https://github.com/EasterWorks/Cergs-Stealthchanger/blob/main/Hardware-And-Calibration.md
 
 
+## Extrapolation
+
+You will notice that there is a folder named "Extrapolation". This includes experiments I've done with the Stealthchanger ecosystem to try to make it more approachable, more reliable, and overall improved. It primarily has a focus on lessons learned for now, but I will include files and information for anything that I tried that I found particularly valuable as well.
+
+
 ## Credits:  
 Viesturz, "tapchanger"  
 - https://github.com/viesturz/tapchanger  
