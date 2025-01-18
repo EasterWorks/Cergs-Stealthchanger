@@ -127,31 +127,31 @@ max_z_accel: 400
 
 ... which has resulted in toolchanges taking 9 seconds.
 
-On top of just simply making toolchanges faster so prints don't take as long, this also helps reduce the ooze that happens when a tool is travelling from the dock to the print. On 24s toolchanges, my tools can ooze around 3-4mm of material, necessitating the use of a purge tower. At 9s, they barely have any time to ooze, meaning a purge tower is no longer mandatory. So not only cutting down toolchange times and reducing ooze, but also eliminating the purge tower, all contribute greatly to overall print speed and reduce potential for failed prints.
+On top of just simply making toolchanges faster so prints don't take as long, this also helps reduce the ooze that happens when a tool is travelling from the dock to the print. On 24s toolchanges, my tools can ooze around 3-4mm of material, necessitating the use of a purge tower. At 9s, they barely have any time to ooze, meaning a purge tower is no longer mandatory. So not only cutting down toolchange times and reducing ooze, but also eliminating the purge tower, all contribute greatly to overall print speed and reduce the potential for failed prints.
 
 Stats for nerds using the two-color Panda for reference, which has 151 tool changes:
 
 **24-second toolchanges with a purge tower:**
-Total print time: 3h47m
-Time spent on toolchanges: 1h24s
-Time spent actually printing the Panda: 2h46m36s
-Filament used total: 51.81g
-Filament used on purge tower: 2.97g
-Filament used on actual print: 47.84g
-Total filament cost (for Elegoo PLA+ on both colors): $0.83 USD
-Cost of purge tower filament: $0.06 USD
-Cost of actual print filament: $0.77 USD
+- Total print time: 3h47m
+- Time spent on toolchanges: 1h24s
+- Time spent actually printing the Panda: 2h46m36s
+- Filament used total: 51.81g
+- Filament used on purge tower: 2.97g
+- Filament used on actual print: 47.84g
+- Total filament cost (for Elegoo PLA+ on both colors): $0.83 USD
+- Cost of purge tower filament: $0.06 USD
+- Cost of actual print filament: $0.77 USD
 
 **9-second toolchanges with no purge tower:**
-Total print time: 2h54m
-Time spent on toolchanges: 22m39s
-Time spent actually printing the Panda: 2h31m21s
-Filament used total: 47.84g
-Filament used on purge tower: 0g
-Filament used on actual print: 47.84g
-Cost (for Elegoo PLA+ on both colors): $0.76 USD
-Cost of purge tower filament: $0 USD
-Cost of actual print filament: $0.76 USD
+- Total print time: 2h54m
+- Time spent on toolchanges: 22m39s
+- Time spent actually printing the Panda: 2h31m21s
+- Filament used total: 47.84g
+- Filament used on purge tower: 0g
+- Filament used on actual print: 47.84g
+- Cost (for Elegoo PLA+ on both colors): $0.76 USD
+- Cost of purge tower filament: $0 USD
+- Cost of actual print filament: $0.76 USD
 
 **Differences**
 Prints with optimized toolchange speed and no purge tower vs without speed optimization using purge tower:
