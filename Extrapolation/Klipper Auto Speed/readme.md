@@ -70,7 +70,7 @@ AUTO_SPEED AXIS=Z
 
 If you DON'T specify an axis, the X and Y axes will be tested.
 
-Of incredible importance: Ensure your X/Y/Z max positions are accurate. My Voron 2.4 on paper has a 300mm max Z position, but in practice, it actually runs into hardware limitations at 280mm. I had never edited this parameter to be accurate to reality, so it was still set to 300mm, and my gantry tried to go to heaven when I just sent AUTO_SPEED AXIS=Z. 
+Of incredible importance: Ensure your X/Y/Z max positions are accurate. My Voron 2.4 on paper has a 300mm max Z position, but in practice, it actually runs into hardware limitations at 280mm. I had never edited this parameter to be accurate to reality, so it was still set to 300mm, and my gantry tried to go to heaven when I first tried to test the Z axis. 
 
 
 ### What it does and how it works:
