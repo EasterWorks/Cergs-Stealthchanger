@@ -22,7 +22,9 @@ Unfortunately, in practice, I found that one of my backplates was perfectly usab
 
 However, the SLS shuttle is working great with both the "good" SLS backplate and my previously-made FDM backplates.
 
-**Lesson learned:** If your FDM shuttle and backplates are working well and are printed from high-quality materials, there is no reason to go with SLS replacements. It may one day be worth it to use CNC'd aluminum components when they are available.
+It is worth noting that a CNC shuttle option now exists from Fysetc, and soon from LDO as well. The community has been praising these so far, with the caveat that your backplates will likely have to undergo the heat-treating process again in order to fit up perfectly.
+
+**Lesson learned:** If your FDM shuttle and backplates are working well and are printed from high-quality materials, there is no reason to go with SLS replacements. It may be worth it to use a CNC'd aluminum shuttle if you are having durability issues with your shuttle.
 
 
 ## Piano Wire Umbilical Management
@@ -31,9 +33,11 @@ From the first moment I installed the 1mm piano wire for umbilical control, I re
 
 Using closer to a 0.6mm-0.8mm piano wire so it can be constrained on the toolhead would help with this, 1mm is just seemingly too stiff.
 
-Ultimately, the correct solution here is to use Igus ChainFlex cabling to replace your standard umbilical cable. This is quite cheap - if you buy directly from Igus, it's $1.25/ft. I ordered from West3D to ensure that the cable diameter was actually 7mm (same as the original umbilical) and had 6 conductors - Igus offers 5 and 7 conductors, but not 6 for whatever reason.
+After this didn't work out very well, I decided to try IGUS ChainFlex cabling from West3D. This initially seemed promising, however the cable began to sag slightly after around 25 hours of ABS-printing chamber temperatures. Not a great result for cable that costs about $5/ft.
 
-**Lesson learned:** TBD, haven't received the ChainFlex quite yet.
+Finally, some folks in the DSD Discord tried to replicate what Prusa has done for their umbilical management on the XL, where they use nylon strips for stiffening. This was accomplished using fairly large zipties. I replicated this in my own setup using 36" zipties, which are around 9mm wide and 2.5mm thick. These provided fantastic results and are what I recommend everyone use.
+
+**Lesson learned:** Big nylon zipties are beating the pants off of every other umbilical support option so far.
 
 
 ## Combatting Ooze
