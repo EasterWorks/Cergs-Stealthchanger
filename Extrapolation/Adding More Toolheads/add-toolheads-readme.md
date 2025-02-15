@@ -1,1 +1,7 @@
+After completing the initial build with the two Stealthburner toolheads, I wanted to add two more toolheads - in particular, Dragonburners with the WWBMG extruder and the LDO Nitehawk-36 toolhead board.
 
+Assembly of the tools and dock parking calibration is as straightforward as it is for building any other set. However, something to note is that the nozzle on the bottom of the Stealthburners protrudes downward FAR more than the nozzle on the Dragonburners, meaning extra care must be taken when calibrating the Dragonburner's Z offset.
+
+Additionally, I was not able to get the Dragonburner cowl and dock bases provided by DraftShift Design working properly. The core issue was that the Dragonburners are VERY likely to tilt on the two screws that grab into the cowl when being picked up by the shuttle, making docking/undocking incredibly inconsistent.
+
+To get around this, I designed a new cowl and dock which rely upon 5x2.75mm magnets, which can be found in this same folder under "Dragonburner-Magnets". This bulks out the fan duct sections of the cowl slightly to add real estate for four magnets, and modifies how the toolhead sits in the dock base and also provides space for four matching magnets. An additional two 5mm magnets can be placed in front of the cowl screws to mate up to some M3 machine screws for added stability and guidance during docking/undocking.
