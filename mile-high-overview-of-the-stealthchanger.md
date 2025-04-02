@@ -3,7 +3,7 @@
 Want a more consise description of the Stealthchanger and don't want to scroll through a ton of Github pages, YouTube videos that only cover fractions of the overall picture, or my huge Hardware and Calibration document? Start here!
 
 ### What is Stealthchanger?
-[Stealthchanger](https://github.com/DraftShift/StealthChanger) is a toolchanging system by DraftShift Design based on Viesturs Zariņš' [Tapchanger](https://github.com/viesturz/tapchanger) project. Stealthchanger uses a different docking solution than the Tapchanger and supports a wide array of toolheads.
+[Stealthchanger](https://github.com/DraftShift/StealthChanger) is a toolchanging system by DraftShift Design based on Viesturs Zariņš' [Tapchanger](https://github.com/viesturz/tapchanger) project. Stealthchanger uses a different shuttle design than the Tapchanger and supports a wide array of toolheads.
 
 DraftShift Design's toolchanger project will _eventually_ be a hollistic overhaul of Tapchanger and Klipper-Toolchanger, but their firmware scripts are still in the prototype stage as of this writing, so they are currently leaning on Viesturs' framework - this will _eventually_ change, but for now, you can't have Stealthchanger without Tapchanger.
 
