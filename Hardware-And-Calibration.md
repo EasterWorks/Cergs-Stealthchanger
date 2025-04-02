@@ -348,6 +348,8 @@ For setting up your dock positions:
 
 It is normal for the nozzle to impact the printed wiper stand on the dock, that's actually what it's there for.
 
+Highly advisable after this process to adjust the Z position up/down depending on how smooth your toolchanges are.
+
 If during the docking test, you had to E-stop because the tool was going to smash into the dock, redo your positioning.
 If during the docking test, your toolhead docked properly but you heard some surface contact, you might need to adjust X or Z just slightly. We're talking values of like 0.1mm-0.5mm, nothing huge. 
 If during the docking test, you are positive your position is good but you still heard some surface contact, your dock may have a slight warp. This isn't the end of the world but may impact reliability. Make sure the dock sits as flat as possible!
