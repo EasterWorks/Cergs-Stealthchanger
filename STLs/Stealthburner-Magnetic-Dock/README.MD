@@ -8,3 +8,5 @@ SB front hotend assembly for chosen hotend. Needs 2x magnets.
 
 - [hotend]-rear.stl:
 SB rear hotend assembly for chosen hotend. Needs 2x magnets.
+
+Rapido V2 files provided by nicksnoopy on Discord.
